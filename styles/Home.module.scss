@@ -1,0 +1,14 @@
+
+
+.homeDisplay{
+    height: calc(100vh - 5em);
+    min-height: 100%;
+    // margin-block: 50vh;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
