@@ -1,4 +1,4 @@
-import { client } from '../utils/shopify-client'
+// import { client } from '../utils/shopify-client'
 import classes from '../styles/Home.module.scss'
 import Slider from "react-slick";
 import Left from '../component/Overlap_Images/Left';
