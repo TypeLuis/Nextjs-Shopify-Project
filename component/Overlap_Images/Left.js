@@ -18,19 +18,17 @@ const Left = () => {
         }
 
 
-        let runThough = 0
-
         const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
 
             entries.forEach(entry => {
                 if (!entry.isIntersecting) {
 
-                    if (runThough < 100) {
-
-                        runThough += 1
+                    if (entry.boundingClientRect.top > 100) {
+                        // Element is above the viewport
                         entry.target.classList.remove(classes.appear)
                     }
                     else {
+                        // Element is below viewport
                         return
                     }
                 }
@@ -47,12 +45,12 @@ const Left = () => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) {
 
-                    if (runThough < 100) {
-
-                        runThough += 1
+                    if (entry.boundingClientRect.top > 0) {
+                        // Element is above the viewport
                         entry.target.classList.remove(classes.appear)
                     }
                     else {
+                        // Element is below viewport
                         return
                     }
                 }
