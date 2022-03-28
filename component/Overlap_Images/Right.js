@@ -7,11 +7,6 @@ const Right = () => {
         const slides = document.getElementsByClassName(classes.mosaic__item)
 
         const appearOptions = {
-            threshold: 1,
-            rootMargin: "-50px 0px"
-        }
-
-        const appearOptionss = {
             threshold: 0,
             rootMargin: "0px 0px"
         }
@@ -59,7 +54,7 @@ const Right = () => {
                     // appearOnScroll.unobserve(entry.target)
                 }
             })
-        }, appearOptionss)
+        }, appearOptions)
 
 
 

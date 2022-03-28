@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import Left from '../component/Overlap_Images/Left';
 import Right from '../component/Overlap_Images/Right';
 import Transition_Image from '../component/Transition_Image';
+import Card from '../component/Card';
 // import "~slick-carousel/slick/slick.css";
 
 const HomePage = (props) => {
@@ -14,7 +15,7 @@ const HomePage = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1
   };
-  // console.log(classes)
+  
   return (
     <div>
       <div>
@@ -32,7 +33,32 @@ const HomePage = (props) => {
 
       <Left />
 
+      {/* <Card /> */}
+
       <Transition_Image />
+
+      <Right />
+
+      <Left />
+
+      <Right />
+
+      <Left />
+
+
+      <div className={classes.test}>
+
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
 
 
       {/* <div className={classes.homeDisplay}>

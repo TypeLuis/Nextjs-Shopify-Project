@@ -1,15 +1,31 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
 
+.homeDisplay {
+  height: 100vw;
+  // height: calc(100vh - 5em);
+  min-height: 100%;
+  // margin-block: 50vh;
 
-.homeDisplay{
-    height: 100VW;
-    // height: calc(100vh - 5em);
-    min-height: 100%;
-    // margin-block: 50vh;
-
-    img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-    }
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
 
+.test {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+
+  @media screen and (max-width: 790px) {
+    grid-auto-columns: 78%;
+  }
+
+  padding: 0 2rem 2rem;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
