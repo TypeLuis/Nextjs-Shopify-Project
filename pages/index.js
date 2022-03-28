@@ -17,7 +17,7 @@ const HomePage = (props) => {
   };
   
   return (
-    <div>
+    <div className={classes.home_body}>
       <div>
 
         <div className={classes.homeDisplay}>

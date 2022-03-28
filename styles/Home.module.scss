@@ -1,8 +1,18 @@
 @import "https://unpkg.com/open-props";
 @import "https://unpkg.com/open-props/normalize.min.css";
 
+.home_body {
+  margin: 0;
+  padding: 0;
+}
+
 .homeDisplay {
-  height: 100vw;
+  height: 80vw;
+
+  @media screen and (max-width: 790px) {
+    height: 60vh;
+  }
+  width: 100%;
   // height: calc(100vh - 5em);
   min-height: 100%;
   // margin-block: 50vh;
