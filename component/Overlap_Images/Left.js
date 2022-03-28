@@ -93,6 +93,11 @@ const Left = () => {
                     <p className={`${classes.fade__in}`}>
                         Life with littles is unexpected, we created straps that are comfy while worn as a backpack, cross body, shoulder bag or attached to a stroller.
                     </p>
+
+                    <p className={`${classes.fade__in}`}>
+                        Life with littles is unexpected, we created straps that are comfy while worn as a backpack, cross body, shoulder bag or attached to a stroller.
+                    </p>
+
                 </div>
 
 

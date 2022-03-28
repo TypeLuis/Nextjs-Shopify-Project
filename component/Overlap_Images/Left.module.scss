@@ -16,12 +16,8 @@ $img-position: Min(15vw, 350px - 100px);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    
+    margin: 35px auto;
     width: 80vw;
-    
-    // display: inline-flex;
-    // width: 90vw;
 }
 
 .mosaic__description{
@@ -33,15 +29,15 @@ $img-position: Min(15vw, 350px - 100px);
     align-items: center;
     flex-direction: column;
     // margin: 0 auto;
-
     h2{
         font-weight: 500;
         margin: 5px;
     }
     p{
         position: relative;
-        width: Min(40vw, 60ch);
+        width: Min(40vw, 40ch);
         font-size: 18px;
+        line-height: 30px;
     }
     button {
         width: Min(95%, 250px);

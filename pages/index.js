@@ -3,6 +3,7 @@ import classes from '../styles/Home.module.scss'
 import Slider from "react-slick";
 import Left from '../component/Overlap_Images/Left';
 import Right from '../component/Overlap_Images/Right';
+import Transition_Image from '../component/Transition_Image';
 // import "~slick-carousel/slick/slick.css";
 
 const HomePage = (props) => {
@@ -31,10 +32,12 @@ const HomePage = (props) => {
 
       <Left />
 
+      <Transition_Image />
 
-      <div className={classes.homeDisplay}>
+
+      {/* <div className={classes.homeDisplay}>
         <img src='https://images.unsplash.com/photo-1590992133988-6ffb251c607e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1362&q=80' />
-      </div>
+      </div> */}
 
 
 
