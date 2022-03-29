@@ -1,18 +1,24 @@
 @import "https://unpkg.com/open-props";
 @import "https://unpkg.com/open-props/normalize.min.css";
-.main {
+.card {
   --_spacer: var(--size-3);
   // position: absolute;
   // padding: 2rem;
   // height: Min(40vw, 400px);
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 550ms linear, transform 400ms linear,
+    left 500ms ease-in-out;
   display: grid;
   grid-template-rows: min-content;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
+  position: relative;
 }
 
 .product__image {
+  box-shadow: 0.25px 0.25px 1px 0.25px black;
   // height: Min(40vw, 400px);
   // width: Min(40vw, 400px);
 
@@ -26,4 +32,17 @@
 
 .product__title {
   width: 100%;
+}
+
+.card.appear {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card.slider_event {
+  left: 50%;
+}
+
+.card.slider_event.appear {
+  left: 0;
 }

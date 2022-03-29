@@ -1,9 +1,7 @@
-@import "https://unpkg.com/open-props";
-@import "https://unpkg.com/open-props/normalize.min.css";
-
 .home_body {
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
 }
 
 .homeDisplay {
@@ -25,17 +23,24 @@
 }
 
 .test {
+  position: relative;
+  margin-block: 2rem;
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
   grid-auto-flow: column;
   grid-auto-columns: 21%;
 
+  //   left: 75%;
   @media screen and (max-width: 790px) {
     grid-auto-columns: 78%;
   }
 
-  padding: 0 2rem 2rem;
+  //   padding: 0 2rem 2rem;
 
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+}
+
+.test.appear {
+  left: 0%;
 }

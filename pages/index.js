@@ -1,20 +1,53 @@
 // import { client } from '../utils/shopify-client'
 import classes from '../styles/Home.module.scss'
-import Slider from "react-slick";
+import cardClass from '../component/Card.module.scss'
+import { useEffect } from 'react'
 import Left from '../component/Overlap_Images/Left';
 import Right from '../component/Overlap_Images/Right';
 import Transition_Image from '../component/Transition_Image';
 import Card from '../component/Card';
-// import "~slick-carousel/slick/slick.css";
 
 const HomePage = (props) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
+  useEffect(()=>{
+    const slider = document.getElementsByClassName('slider')
+
+
+    const appearOptions = {
+      threshold: 0,
+      rootMargin: "-50px 0px"
+    }
+
+    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          if (entry.boundingClientRect.top > 0) {
+            // Element is above the viewport
+            // get's all the childNodes from the horizontal Scrolling Element
+            for(let element of entry.target.childNodes){
+              // You can import multiple module.scss classes, each import are still separate in classes
+              element.classList.remove(cardClass.appear)
+            }
+          }
+          else {
+            // Element is below viewport
+            return
+          }
+        }
+        else {
+
+          for(let element of entry.target.childNodes){
+            element.classList.add(cardClass.appear)
+          }
+        }
+      })
+    }, appearOptions)
+    
+    appearOnScroll.observe(slider[0])
+
+    // for (let slide of slider) {
+    // }
+  }, [])
   
   return (
     <div className={classes.home_body}>
@@ -39,6 +72,7 @@ const HomePage = (props) => {
 
       <Right />
 
+        <Card />
       <Left />
 
       <Right />
@@ -46,7 +80,7 @@ const HomePage = (props) => {
       <Left />
 
 
-      <div className={classes.test}>
+      <div className={`${classes.test} slider`}>
 
         <Card />
         <Card />
@@ -60,6 +94,9 @@ const HomePage = (props) => {
         <Card />
       </div>
 
+      <Right />
+
+      <Left />
 
       {/* <div className={classes.homeDisplay}>
         <img src='https://images.unsplash.com/photo-1590992133988-6ffb251c607e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1362&q=80' />
