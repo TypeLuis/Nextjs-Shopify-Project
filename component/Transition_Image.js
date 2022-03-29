@@ -45,10 +45,9 @@ const Transition_Image = () => {
                 if (!entry.isIntersecting) {
 
                     // Pauses the animation when element is not in view from top or bottom
-                    if (entry.boundingClientRect.top > 1200 || entry.boundingClientRect.bottom < 60) {
                         // Element is above the viewport
                         entry.target.style.animationPlayState = 'paused'
-                    }
+                    // }
 
                 }
                 else {

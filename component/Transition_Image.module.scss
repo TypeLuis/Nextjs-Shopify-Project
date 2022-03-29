@@ -23,6 +23,7 @@
   @media screen and (max-width: 790px) {
     height: 110vh;
   }
+  background-color: #181a1b;
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -33,9 +34,11 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: scale(1) translate(-50%, -50%);
+    // transform: scale();
     object-fit: cover;
     animation-delay: 250ms;
+    // perspective: 100px;
   }
 
   img:first-of-type {
@@ -44,13 +47,13 @@
   }
   img:last-of-type {
     animation: slide2 6s linear infinite,
-      zoom-in 3s cubic-bezier(0.01, 0.62, 1, 0.82) infinite;
+      zoom-in 3.0001s cubic-bezier(0.01, 0.62, 1, 0.82) infinite;
   }
 
   @keyframes zoom-in {
     0% {
       opacity: 0;
-      width: 100%;
+      transform: scale(1) translate(-50%, -50%);
     }
 
     5% {
@@ -58,7 +61,11 @@
     }
     100% {
       opacity: 1;
-      width: 120%;
+      transform: scale(1.05) translate(-50%, -50%);
+      //   width: 120%;
+      //   @media screen and (max-width: 790px) {
+      //     width: 150%;
+      //   }
     }
   }
 

@@ -157,7 +157,7 @@ $img-position-media: Min($position-vw-media, 250px);
     z-index: -1;
     position: relative;
     top: $img-position;
-    // left: 100%;
+    left: 100%;
     opacity: 0;
     transition: left 500ms ease-in, opacity 500ms ease-in;
   }
