@@ -5,13 +5,14 @@
 }
 
 .homeDisplay {
-  height: 80vw;
+  //   height: 80vw;
+  position: relative;
 
   @media screen and (max-width: 790px) {
     height: 60vh;
   }
   width: 100%;
-  // height: calc(100vh - 5em);
+  height: 100vh;
   min-height: 100%;
   // margin-block: 50vh;
 
@@ -26,7 +27,7 @@
   position: relative;
   margin-block: 2rem;
   display: grid;
-  gap: 0.5rem;
+  gap: 1rem;
   grid-auto-flow: column;
   grid-auto-columns: 21%;
 

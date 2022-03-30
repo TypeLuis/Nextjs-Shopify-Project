@@ -70,6 +70,10 @@ $img-position-media2: Min($position-vw-media2, 90px);
 .mosaic__description {
   position: relative;
   display: flex;
+  @media screen and (min-width: 791px) {
+    margin-left: $img-position;
+    top: 20px;
+  }
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -149,7 +153,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     height: $img-height;
     aspect-ratio: 1/ 1;
     object-fit: cover;
-    box-shadow: 2px 2px 10px 0.1px rgb(122, 122, 122);
+    box-shadow: 2px 2px 5px 0.1px rgb(122, 122, 122);
   }
 
   .mosaic__item:first-of-type {

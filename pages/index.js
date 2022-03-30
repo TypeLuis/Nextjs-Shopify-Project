@@ -6,6 +6,7 @@ import Left from '../component/Overlap_Images/Left';
 import Right from '../component/Overlap_Images/Right';
 import Transition_Image from '../component/Transition_Image';
 import Card from '../component/Card';
+// import Header from '../component/Header';
 
 const HomePage = (props) => {
   const observe = (className) => {
@@ -55,7 +56,7 @@ const HomePage = (props) => {
       <div>
 
         <div className={classes.homeDisplay}>
-          <img src='https://images.unsplash.com/photo-1590992133988-6ffb251c607e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1362&q=80' />
+          <img src='https://images.unsplash.com/photo-1648522954037-d3d7a51069ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80' />
         </div>
       </div>
 

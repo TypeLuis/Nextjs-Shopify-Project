@@ -1,10 +1,12 @@
-import Header from '../component/Header'
+import Header from '../component/Header/Header'
+import HeaderSmall from '../component/Header/HeaderSmall'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
+      <HeaderSmall />
       <Component {...pageProps} />
     </>
   )
