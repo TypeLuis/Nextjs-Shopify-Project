@@ -165,7 +165,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     left: -25%;
     top: $img-position;
     opacity: 0;
-    transition: left 500ms ease-in, opacity 500ms ease-in;
+    transition: left 350ms ease-in-out, opacity 500ms ease-in;
   }
 
   .mosaic__item.appear:first-of-type {
@@ -178,7 +178,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     position: relative;
     left: 30%;
     opacity: 0;
-    transition: left 500ms ease-in, opacity 500ms ease-in;
+    transition: left 350ms ease-in-out, opacity 500ms ease-in;
   }
   .mosaic__item.appear:last-of-type {
     position: relative;
