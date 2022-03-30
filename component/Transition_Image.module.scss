@@ -47,7 +47,7 @@
   }
   img:last-of-type {
     animation: slide2 6s linear infinite,
-      zoom-in 3.0001s cubic-bezier(0.01, 0.62, 1, 0.82) infinite;
+      zoom-in 3s cubic-bezier(0.01, 0.62, 1, 0.82) infinite;
   }
 
   @keyframes zoom-in {

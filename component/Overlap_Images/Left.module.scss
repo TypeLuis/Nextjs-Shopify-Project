@@ -1,14 +1,18 @@
 $height-vw: 25vw;
-$position-vw: $height-vw * 0.75;
+$position-vw: $height-vw * 0.2;
+$position-vw2: $height-vw * 1.5;
 
 $img-height: Min($height-vw, 300px);
-$img-position: Min($position-vw, 250px);
+$img-position: Min($position-vw, 60px);
+$img-position2: Min($position-vw, 450px);
 
-$height-vw-media: 50vw;
-$position-vw-media: $height-vw-media * 0.75;
+$height-vw-media: 45vw;
+$position-vw-media: $height-vw-media * 0.2;
+$position-vw-media2: $height-vw-media * 0.3;
 
 $img-height-media: Min($height-vw-media, 300px);
-$img-position-media: Min($position-vw-media, 250px);
+$img-position-media: Min($position-vw-media, 60px);
+$img-position-media2: Min($position-vw-media2, 90px);
 
 @mixin fade_in($speed) {
   position: relative;
@@ -25,22 +29,21 @@ $img-position-media: Min($position-vw-media, 250px);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
-  @media screen and (max-width: 1350px) {
-    margin: 50px 0;
+  margin: 140px auto;
+  position: relative;
+  @media screen and (min-width: 791px) {
+    // left: 4%;
   }
+  //   padding-inline-end: 15px;
   width: 80vw;
   @media screen and (max-width: 790px) {
-    //     // height: 60vh;
     flex-direction: column;
-    margin: 0;
+    margin: $img-position-media 0;
+    // margin: 0;
     padding: 0;
-    .mosaic {
-      margin: 0;
-    }
     .mosaic__description {
-      margin: 0 auto;
-      padding: 0;
+      margin-top: $img-position-media2;
+      //   top: Min(15vw, 100px);
 
       left: 15%;
       p {
@@ -49,6 +52,9 @@ $img-position-media: Min($position-vw-media, 250px);
       }
     }
     .mosaic {
+      left: 7%;
+      height: $img-height-media;
+      width: $img-height-media;
       img {
         width: $img-height-media;
         height: $img-height-media;
@@ -66,21 +72,24 @@ $img-position-media: Min($position-vw-media, 250px);
 
 .mosaic__description {
   position: relative;
-  left: $img-position;
-  top: Min(5vw, 100px);
+  @media screen and (min-width: 791px) {
+    margin-left: $img-position;
+  }
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   flex-direction: column;
-  //   margin: 0 auto;
+
   h2 {
-    font-weight: 500;
+    font-weight: 600;
     margin: 5px;
   }
   p {
     position: relative;
     width: Min(40vw, 40ch);
-    font-size: Clamp(18px, 8vw, 20px);
+    font-size: Clamp(15px, 8vw, 18px);
+    font-weight: 400;
     line-height: 30px;
   }
   button {
@@ -135,40 +144,39 @@ $img-position-media: Min($position-vw-media, 250px);
 }
 
 .mosaic {
-  // margin: 0 auto;
   position: relative;
-  margin-bottom: 2rem;
-  display: grid;
-  padding-inline-end: Min(4vw, 5em);
-  right: Min(5vw, 20px);
-  margin: 0 2em;
-  // grid-template-rows: 1fr;
-  // max-height: 200px;
+  display: flex;
+  justify-content: center;
+  //   padding-inline-end: Min(4vw, 5em);
+  //   right: Min(10vw, 50px);
+  //   margin: 0 2em;
 
   img {
     width: $img-height;
     height: $img-height;
     aspect-ratio: 1/ 1;
     object-fit: cover;
-    box-shadow: 0.5px 0.5px 2px 0.5px black;
+    box-shadow: 2px 2px 10px 0.1px rgb(122, 122, 122);
   }
 
   .mosaic__item:first-of-type {
-    z-index: -1;
     position: relative;
+    // 15% of image size
+    left: -25%;
     top: $img-position;
-    left: 100%;
     opacity: 0;
     transition: left 500ms ease-in, opacity 500ms ease-in;
   }
 
   .mosaic__item.appear:first-of-type {
+    // left: $img-position;
     left: $img-position;
     opacity: 1;
   }
   .mosaic__item:last-of-type {
+    z-index: -1;
     position: relative;
-    left: -50%;
+    left: 30%;
     opacity: 0;
     transition: left 500ms ease-in, opacity 500ms ease-in;
   }

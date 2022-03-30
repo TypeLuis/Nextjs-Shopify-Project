@@ -8,17 +8,18 @@ import Transition_Image from '../component/Transition_Image';
 import Card from '../component/Card';
 
 const HomePage = (props) => {
-  useEffect(()=>{
+  const observe = (className) => {
+
     const slider = document.getElementsByClassName('slider')
-
-
+  
+  
     const appearOptions = {
       threshold: 0,
       rootMargin: "-50px 0px"
     }
-
+  
     const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-
+  
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
           if (entry.boundingClientRect.top > 0) {
@@ -26,7 +27,7 @@ const HomePage = (props) => {
             // get's all the childNodes from the horizontal Scrolling Element
             for(let element of entry.target.childNodes){
               // You can import multiple module.scss classes, each import are still separate in classes
-              element.classList.remove(cardClass.appear)
+              element.classList.remove(className)
             }
           }
           else {
@@ -35,18 +36,18 @@ const HomePage = (props) => {
           }
         }
         else {
-
+  
           for(let element of entry.target.childNodes){
-            element.classList.add(cardClass.appear)
+            element.classList.add(className)
           }
         }
       })
     }, appearOptions)
     
     appearOnScroll.observe(slider[0])
-
-    // for (let slide of slider) {
-    // }
+  }
+  useEffect(()=>{
+    observe(cardClass.appear)
   }, [])
   
   return (
