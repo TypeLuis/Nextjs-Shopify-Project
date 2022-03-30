@@ -59,9 +59,9 @@ const HomePage = (props) => {
         </div>
       </div>
 
-      <Left />
-
       <Right />
+
+      <Left />
 
       <Right />
 
