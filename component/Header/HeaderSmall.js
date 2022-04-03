@@ -55,10 +55,10 @@ function NavItem(props) {
 
 
                 // if the icon reference has a class name of true which is determined by the open state and if the element clicked has a class named 'nav control'
-                // else if (icon.current.classList.contains('true') && e.target.classList.contains('nav-control')) {
-                //     setContent(false)
-                //     setTimeout(() => { setOpen(false) }, 400)
-                // }
+                else if (icon.current.classList.contains( classes[open]) && e.target.classList.contains('nav-control')) {
+                    setContent(false)
+                    setTimeout(() => { setOpen(false) }, 400)
+                }
             }
         }, 100)
 
@@ -232,9 +232,13 @@ function DropdownMenu(props) {
                 {/* > */}
                 <div  ref={nodeRef2} className={`nav-event ${classes.menu}`}>
                 {/* <div className={`nav-event ${classes.menu}`}> */}
+
+                <div className={classes.second_heading}>
+
                     <DropdownItem goToMenu="main" leftIcon={"<"}>
                         <h2 className={`nav-event`}>Shop</h2>
                     </DropdownItem>
+                </div>
 
                     <DropdownItem dropLink='/' leftIcon={"^"}>TV</DropdownItem>
 

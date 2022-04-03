@@ -1,15 +1,17 @@
 .header {
   width: 100%;
-  position: fixed;
+  // position: fixed;
+  position: absolute;
   z-index: 100;
   left: 0;
   right: 0;
-  height: 5rem;
+  height: 10rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   background-color: transparent;
-  padding: 5%;
+  padding: 3%;
+  overflow: hidden;
 
   ul {
     list-style: none;

@@ -1,0 +1,101 @@
+.slide_container {
+  width: 100vw;
+  height: 90vw;
+  margin-block: auto;
+  /* display: inline-block; */
+  overflow: hidden;
+  text-align: center;
+}
+
+.image_container {
+  width: 200vw;
+  height: 90vw;
+  position: relative;
+  transition: left 1s;
+  /* left: -800px; */
+  /* animation: sliding 8s linear; */
+}
+
+.image_container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: red;
+  display: block;
+  height: 2px;
+  width: 0;
+}
+
+.image_container.img1::before {
+  animation: image1 8s linear;
+}
+.image_container.img1 {
+  .slider_button {
+    height: 20px;
+    width: 20px;
+    margin-inline: 5px;
+    border-radius: 7.5px;
+    background-color: white;
+  }
+}
+.image_container.img2::before {
+  animation: image2 8s linear;
+}
+
+@keyframes image1 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+@keyframes image2 {
+  0% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.slider_image {
+  width: 100vw;
+  height: 90vw;
+  object-fit: cover;
+  float: left;
+  margin: 0;
+  padding: 0;
+  /* position: relative; */
+}
+
+.button_container {
+  position: relative;
+  top: -25px;
+}
+
+.slider_button {
+  cursor: pointer;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin-inline: 5px;
+  border-radius: 7.5px;
+  background-color: gray;
+  transition: height 100ms ease-in-out, width 100ms ease-in-out;
+
+  &:hover {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+  }
+}
+
+/* #slider-image-1:target ~ .image-container {
+    left: 0px;
+}
+#slider-image-2:target ~ .image-container {
+    left: -100vw;
+} */
