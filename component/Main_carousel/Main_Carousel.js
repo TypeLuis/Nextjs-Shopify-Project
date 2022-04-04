@@ -1,5 +1,4 @@
-import React from 'react'
-import { useEffect, useRef } from 'react/cjs/react.development'
+import React, { useEffect, useRef } from 'react'
 import classes from './Main_Carousel.module.scss'
 
 const Main_Carousel = () => {
@@ -36,7 +35,6 @@ const Main_Carousel = () => {
             
             if (containerLeft != 0) {
                 containerRef.current.classList.add(classes.img1)
-                // psudeo.animation = `image1 8s linear`
                 containerRef.current.style.left = '0px';
             }
         }
