@@ -22,7 +22,7 @@ $speed: 500ms;
   position: fixed;
   bottom: 4%;
   //   margin: 5%;
-  width: 40%;
+  width: Min(40%, 350px);
   left: 2%;
   //   margin: 0 auto;
   height: $nav-size;

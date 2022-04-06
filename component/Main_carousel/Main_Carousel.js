@@ -295,11 +295,11 @@ const Main_Carousel = () => {
             </div>
 
         </div>
-
         <div className={classes.button_container}>
             <span className={classes.slider_button}></span>
             <span className={classes.slider_button}></span>
         </div>
+
         
     </div>
     )
