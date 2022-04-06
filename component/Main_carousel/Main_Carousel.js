@@ -35,7 +35,8 @@ const Main_Carousel = () => {
 
         containerRef.current?.style.transition = ''
         pressed = true
-        startX = e.clientX -  containerRef.current?.offsetLeft
+        const mobile = e.touches ? e.touches[0].clientX : e.clientX
+        startX = mobile -  containerRef.current?.offsetLeft
         e.target.style.cursor = 'grabbing'
         console.log(startX)
     }
@@ -90,7 +91,9 @@ const Main_Carousel = () => {
         if(!pressed) return;
         e.preventDefault()
 
-        x = e.clientX
+        const mobile = e.touches ? e.touches[0].clientX : e.clientX
+
+        x = mobile
 
         containerRef.current?.style.left = `${x - startX}px`
 
@@ -222,11 +225,13 @@ const Main_Carousel = () => {
         onMouseMove={(e)=>{mouseMove(e)}}
 
 
+
+
         onTouchStart={(e)=>{mouseDown(e)}}
 
         onTouchEnd={(e)=>{mouseUp(e)}}
 
-        onTouchMove={(e)=>{mouseMove(e)}}
+        onTouchMove={(e)=>{mouseMove(e), { passive: true}}}
         
         className={classes.slide_container}
     
