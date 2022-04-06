@@ -220,6 +220,13 @@ const Main_Carousel = () => {
         onMouseUp={(e) => {mouseUp(e)}}
 
         onMouseMove={(e)=>{mouseMove(e)}}
+
+
+        onTouchStart={(e)=>{mouseDown(e)}}
+
+        onTouchEnd={(e)=>{mouseUp(e)}}
+
+        onTouchMove={(e)=>{mouseMove(e)}}
         
         className={classes.slide_container}
     
