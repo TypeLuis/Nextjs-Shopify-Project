@@ -87,6 +87,8 @@ const Transition_Image = () => {
                     <p className={classes.fade__in}>
                         The minimal vegan leather diaper bag made without functional compromises. The Ayla bag is designed to simplify your life so you can stay focused on what is most important.
                     </p>
+
+                    <button className={classes.fade__in}>Shop Now!</button>
                 </div>
 
             </div>
