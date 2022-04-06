@@ -61,12 +61,15 @@ const Main_Carousel = () => {
         //  if the left image is showing more than the right image
         if ( containerStyle > -outer.width *.5){
             // if the right image is showing less than 10 percent
-            if(containerStyle < outerWidth10){
+            if(containerStyle > outerWidth10){
                 
                 containerRef.current?.style.left = '0px'
                 console.log('go back')
             }
-            containerRef.current?.style.left = `-${outer.width}px`
+            else{
+
+                containerRef.current?.style.left = `-${outer.width}px`
+            }
         }
 
         // right image showing more
@@ -76,7 +79,10 @@ const Main_Carousel = () => {
                 containerRef.current?.style.left = `-${outer.width}px`
                 console.log('go back')
             }
-        containerRef.current?.style.left = '0px'
+            else{
+
+                containerRef.current?.style.left = '0px'
+            }
         }
     }
 
@@ -169,11 +175,11 @@ const Main_Carousel = () => {
                             containerClass.add(classes.img2)
 
                         }
-                    }, 500)
+                        myInterval = setInterval(carouselSlide, 8000)
+                    }, 1000)
                     
                     containerStyle.left = `${position}px`
 
-                    myInterval = setInterval(carouselSlide, 8000)
 
                 }, {capture: true})
             })
