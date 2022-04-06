@@ -22,7 +22,7 @@ $speed: 500ms;
   position: fixed;
   bottom: 4%;
   //   margin: 5%;
-  width: 15%;
+  width: 40%;
   left: 2%;
   //   margin: 0 auto;
   height: $nav-size;
@@ -176,7 +176,7 @@ $speed: 500ms;
 
 /* CSSTransition classes  */
 .menu_primary_Enter_Active {
-  position: absolute;
+  //   position: absolute;
   transform: translateX(-110%);
 }
 .menu_primary_Enter_Done {
@@ -192,7 +192,7 @@ $speed: 500ms;
 }
 
 .menu_secondary_Enter_Active {
-  position: absolute;
+  //   position: absolute;
   transform: translateX(110%);
 }
 .menu_secondary_Enter_Done {
@@ -210,4 +210,15 @@ $speed: 500ms;
   //   .navbar_small {
   //     display: none;
   //   }
+}
+
+@media screen and (max-width: 790px) {
+  .navbar_small {
+    left: 5%;
+    width: 90%;
+
+    .menu {
+      width: 70%;
+    }
+  }
 }

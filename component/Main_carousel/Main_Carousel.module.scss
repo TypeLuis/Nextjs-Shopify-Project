@@ -11,7 +11,7 @@
   width: 200vw;
   height: 90vw;
   position: relative;
-  transition: left 1s;
+  //   transition: left 1s;
   /* left: -800px; */
   /* animation: sliding 8s linear; */
 }
@@ -77,10 +77,12 @@
 }
 
 .slider_button {
-  cursor: pointer;
+  cursor: pointer !important;
+  //   z-index: 200;
   display: inline-block;
   height: 10px;
   width: 10px;
+  padding: 5px;
   margin-inline: 5px;
   border-radius: 7.5px;
   background-color: gray;
@@ -91,6 +93,9 @@
     width: 15px;
     background-color: white;
   }
+}
+
+.image_container {
 }
 
 /* #slider-image-1:target ~ .image-container {

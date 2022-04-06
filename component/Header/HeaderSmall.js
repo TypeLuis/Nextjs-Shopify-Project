@@ -35,39 +35,33 @@ function NavItem(props) {
     // determines if dropdown is open or closed
     const handleOpenClick = (e) => { 
         e.preventDefault()
-        // this setTimeout needs to be run before the setTimeout where we set states to True
 
-        // The reason for this is because the icon reference is looking for a class name that contains true and the window.click references the state before
-        setTimeout(() => {
+        // The window on click is inside the handle click because we need to recall it every time the button is clicked
+        window.onclick = function (e) {
+            // each class name has an event to toggle
 
-            // The window on click is inside the handle click because we need to recall it every time the button is clicked
-            window.onclick = function (e) {
-                // each class name has an event to toggle
+            // if user clicks on element that doesn't contain 'nav-event' as it's first class name
+            if (e.target.classList[0] != 'nav-event') {
+                console.log('hi')
+                setContent(false)
 
-                // if user clicks on element that doesn't contain 'nav-event' as it's first class name
-                if (e.target.classList[0] != 'nav-event') {
-                    console.log('hi')
-                    setContent(false)
-
-                    // this setTimeOut is here to let the animation of dropdown fade out
-                    setTimeout(() => { setOpen(false) }, 400)
-                }
-
-
-                // if the icon reference has a class name of true which is determined by the open state and if the element clicked has a class named 'nav control'
-                else if (icon.current.classList.contains( classes[open]) && e.target.classList.contains('nav-control')) {
-                    setContent(false)
-                    setTimeout(() => { setOpen(false) }, 400)
-                }
+                // this setTimeOut is here to let the animation of dropdown fade out
+                setTimeout(() => { setOpen(false) }, 400)
             }
-        }, 100)
 
-        if (open === true) { }
+
+            // if the icon reference has a class name of true which is determined by the open state and if the element clicked has a class named 'nav control'
+            else if (icon.current?.classList.contains(classes[open]) && e.target.classList.contains('nav-control')) {
+                console.log(classes[open])
+                setContent(false)
+                setTimeout(() => { setOpen(false) }, 400)
+            }
+        }
+
+        if (open === true && content === true) { }
         else {
-            setTimeout(() => {
-                setOpen(true)
-                setContent(true)
-            }, 200)
+            setOpen(true)
+            setContent(true)
         }
     }
 
