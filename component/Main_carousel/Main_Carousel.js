@@ -41,7 +41,7 @@ const Main_Carousel = () => {
     // const containerStyle = containerRef.current?.style
     
     const checkBoundary = (e) => {
-        let outer = e.target.getBoundingClientRect()
+        // let outer = e.target.getBoundingClientRect()
         const containerStyle = containerRef.current?.style
 
 
@@ -52,17 +52,17 @@ const Main_Carousel = () => {
 
         
         // else if(inner.right < outer.right){
-        else if(parseInt(containerStyle.left) < -outer.width){
-            containerStyle.left = `-${outer.width}px`
+        else if(parseInt(containerStyle.left) < -window.innerWidth){
+            containerStyle.left = `-${window.innerWidth}px`
         }
     }
     
     
     const mouseDown = (e) => {
-        if(e.target.parentNode.classList.contains(classes.text_div)) {
-            e.target.style.cursor = 'text'
-            return
-        }
+        // if(e.target.parentNode.classList.contains(classes.text_div)) {
+        //     // e.target.style.cursor = 'text'
+        //     return
+        // }
         if(e.target.tagName === 'SPAN') return
         
         removeInterval()
@@ -73,24 +73,25 @@ const Main_Carousel = () => {
         containerRef.current?.style.transition = ''
         pressed = true
         const mobile = e.touches ? e.touches[0].clientX : e.clientX
+
         startX = mobile -  containerRef.current?.offsetLeft
         e.target.style.cursor = 'grabbing'
         console.log(startX)
     }
     
     const mouseEnter = (e) => {
-        if(e.target.parentNode.classList.contains(classes.text_div)) {
-            e.target.style.cursor = 'text'
-            return
-        }
+        // if(e.target.parentNode.classList.contains(classes.text_div)) {
+        //     e.target.style.cursor = 'text'
+        //     return
+        // }
         e.target.style.cursor = 'grab'
     }
     
     const mouseUp = (e) => {
-        if(e.target.parentNode.classList.contains(classes.text_div)) {
-            e.target.style.cursor = 'text'
-            return
-        }
+        // if(e.target.parentNode.classList.contains(classes.text_div)) {
+        //     // e.target.style.cursor = 'text'
+        //     return
+        // }
         if(e.target.tagName === 'SPAN') return
         e.target.style.cursor = 'grab'
         pressed = false
@@ -104,7 +105,7 @@ const Main_Carousel = () => {
         let myInterval
 
         //  if the left image is showing more than the right image
-        if ( containerStyle > -outer.width *.5){
+        if ( containerStyle > -window.innerWidth *.5){
             // if the right image is showing less than 10 percent
             if(containerStyle > outerWidth10){
                 
@@ -115,17 +116,17 @@ const Main_Carousel = () => {
             }
             else{
                 
-                containerRef.current?.style.left = `-${outer.width}px`
+                containerRef.current?.style.left = `-${window.innerWidth}px`
                 containerRef.current?.classList.add(classes.img2)
                 myInterval = setInterval(carouselSlide, 8000)
             }
         }
         
         // right image showing more
-        else if (containerStyle < -outer.width *.5){
+        else if (containerStyle < -window.innerWidth *.5){
             // if right image is more than 90 percent
             if((containerStyle < outerWidth90)){
-                containerRef.current?.style.left = `-${outer.width}px`
+                containerRef.current?.style.left = `-${window.innerWidth}px`
                 containerRef.current?.classList.add(classes.img2)
                 myInterval = setInterval(carouselSlide, 8000)
                 console.log('go back')
@@ -140,12 +141,17 @@ const Main_Carousel = () => {
     }
 
     const mouseMove = (e) => {
-        if(!pressed) return;
+        if(pressed === false) return;
+        console.log(e)
+        e.stopPropagation()
         e.preventDefault()
 
         const mobile = e.touches ? e.touches[0].clientX : e.clientX
 
+        console.log(mobile)
+
         x = mobile
+        console.log(x - startX)
 
         containerRef.current?.style.left = `${x - startX}px`
 
@@ -163,7 +169,7 @@ const Main_Carousel = () => {
         const containerClass = containerRef.current?.classList
     
         containerStyle.transition = 'left 1'
-        containerClass.add(classes.img1)
+        // containerClass.add(classes.img1)
         containerStyle.left = 0
         let myInterval
 
@@ -172,7 +178,7 @@ const Main_Carousel = () => {
         
         
         
-        myInterval = setInterval(carouselSlide, 8000)
+        // myInterval = setInterval(carouselSlide, 8000)
         
 
         const buttonSlider = ( myInterval) => {
@@ -242,8 +248,8 @@ const Main_Carousel = () => {
 
 
     return (
-    <div 
-    
+    <div
+
         onMouseDownCapture={(e)=>{mouseDown(e)}} 
 
         onMouseEnter={(e) => {mouseEnter(e)}}
@@ -252,46 +258,48 @@ const Main_Carousel = () => {
 
         onMouseMove={(e)=>{mouseMove(e)}}
 
-
-
-
         onTouchStart={(e)=>{mouseDown(e)}}
 
         onTouchEnd={(e)=>{mouseUp(e)}}
 
-        onTouchMove={(e)=>{mouseMove(e), { passive: true}}}
-        
+        onTouchMove={(e)=>{mouseMove(e)}}
+
         className={classes.slide_container}
-    
-    
+
     >
         <div ref={containerRef} id="image-container" className={classes.image_container}>
 
             <div className={`${classes.first_img} ${classes.img_div}`}>
 
+                
+
+                <img src='https://images.unsplash.com/photo-1648765822429-130e147ca93b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+                    className={classes.slider_image} />
+
                 <div className={classes.text_div}>
 
                     <h2>The Test Title</h2>
                     <p>Shop the Title</p>
-                    <button onClick={(e)=>{containerRef.current?.style.left = `${-window.innerWidth}px`;}}>Shop now</button>
+                    <button>Shop now</button>
+
                 </div>
+
                 
-                <img src='https://images.unsplash.com/photo-1648765822429-130e147ca93b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
-                    className={classes.slider_image}></img>
             </div>
 
 
             <div className={`${classes.second_img} ${classes.img_div}`}>
 
+
+                <img src='https://images.unsplash.com/photo-1648684784133-eb5d0787ab9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+                    className={classes.slider_image}/>
+
                 <div className={classes.text_div}>
 
                     <h2>The Test Title</h2>
                     <p>Shop the Title</p>
-                    <button onClick={(e)=>{containerRef.current?.style.left = `0px`;}}>Shop now</button>
+                    <button>Shop now</button>
                 </div>
-
-                <img src='https://images.unsplash.com/photo-1648684784133-eb5d0787ab9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
-                    className={classes.slider_image}></img>
             </div>
 
         </div>

@@ -68,6 +68,7 @@
   top: -25px;
 }
 
+// Button for each img
 .slider_button {
   cursor: pointer !important;
   //   z-index: 200;
@@ -106,8 +107,6 @@
 
 .text_div {
   position: absolute;
-  z-index: 5000 !important;
-  cursor: text !important;
   top: 40%;
   color: #fff;
   font-weight: 400;
