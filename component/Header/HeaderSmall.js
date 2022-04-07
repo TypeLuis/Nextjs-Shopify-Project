@@ -13,6 +13,9 @@ function HeaderSmall() {
             <NavItem menu='main' icon={"^"}>
                 <DropdownMenu></DropdownMenu>
             </NavItem>
+            <NavItem menu='main2' icon={"^"}>
+                <DropdownMenu></DropdownMenu>
+            </NavItem>
 
         </Navbar>
     );
@@ -35,40 +38,61 @@ function NavItem(props) {
     // determines if dropdown is open or closed
     const handleOpenClick = (e) => { 
         e.preventDefault()
+        
+        // this classList references the current click
+        // console.log('e', e.target.classList)
+        console.log('i', icon.current?.classList)
+        
+        
+        // using setTimeout to reference previous button
+        setTimeout(()=>{
 
-        // The window on click is inside the handle click because we need to recall it every time the button is clicked
-        window.onclick = function (e) {
-            // each class name has an event to toggle
+            // The window on click is inside the handle click because we need to recall it every time the button is clicked
+            window.onclick = function (e) {
+                // each class name has an event to toggle
+    
+                // if user clicks on element that doesn't contain 'nav-event' as it's first class name
+                if (e.target.classList[0] != 'nav-event') {
+                    console.log('hi')
+                    setContent(false)
+    
+                    // this setTimeOut is here to let the animation of dropdown fade out
+                    setTimeout(() => { setOpen(false) }, 400)
+                }
+    
+    
+                // if the icon reference has a class name of true which is determined by the open state and if the element clicked has a class named 'nav control'
+                else if (!open === true && icon.current?.classList.contains(classes[!open]) && e.target.classList.contains('nav-control')) {
+                    console.log(!open)
+                    console.log(icon.current?.classList.contains(classes[!open]))
+                    setContent(false)
+                    setTimeout(() => { setOpen(false) }, 400)
+                }
 
-            // if user clicks on element that doesn't contain 'nav-event' as it's first class name
-            if (e.target.classList[0] != 'nav-event') {
-                console.log('hi')
-                setContent(false)
 
-                // this setTimeOut is here to let the animation of dropdown fade out
-                setTimeout(() => { setOpen(false) }, 400)
+                // else if (icon.current?.classList.contains(props.menu) && e.target.classList.contains(props.menu) === false && e.target.classList.contains('nav-button')) {
+                //     console.log(icon.current?.classList)
+                //     console.log(e.target.classList.contains(props.menu))
+                //     setContent(false)
+                //     setTimeout(() => { setOpen(false) }, 400)
+                // }
             }
-
-
-            // if the icon reference has a class name of true which is determined by the open state and if the element clicked has a class named 'nav control'
-            else if (icon.current?.classList.contains(classes[open]) && e.target.classList.contains('nav-control')) {
-                console.log(classes[open])
-                setContent(false)
-                setTimeout(() => { setOpen(false) }, 400)
-            }
-        }
+        }, 100)
 
         if (open === true && content === true) { }
         else {
-            setOpen(true)
-            setContent(true)
+            setTimeout(()=>{
+
+                setOpen(true)
+                setContent(true)
+            }, 200)
         }
     }
 
     return (
-        <li ref={icon} className={`nav-event nav-control ${classes[open]} ${classes.nav_item}`}>
+        <li ref={icon} className={`nav-event nav-control ${props.menu} ${classes[open]} ${classes.nav_item}`}>
             {/* <a href="#" className={`nav-event nav-control ${classes.open} ${classes.icon_button}`} id='icon' onClick={(e) => { setOpen(!open) }}> */}
-            <a href="#" className={`nav-event nav-control ${classes[open]} ${classes.icon_button}`} id='icon' onClick={(e)=>{handleOpenClick(e)}} >
+            <a href="#" className={`nav-event nav-button nav-control ${props.menu} ${classes[open]} ${classes.icon_button}`} id='icon' onClick={(e)=>{handleOpenClick(e)}} >
                 {props.icon}
             </a>
 
@@ -87,12 +111,13 @@ function DropdownMenu(props) {
 
     const nodeRef = useRef(null)
     const nodeRef2 = useRef(null)
+    const nodeRef3 = useRef(null)
 
     useEffect(() => {
         setMenuHeight(dropdownRef.current?.offsetHeight);
-        console.log(classes, String(props.content))
-        console.log(dropdownRef)
-        console.log(nodeRef)
+        // console.log(classes, String(props.content))
+        // console.log(dropdownRef)
+        // console.log(nodeRef)
     }, [])
 
 
@@ -116,16 +141,11 @@ function DropdownMenu(props) {
 
                     <Link href={props.dropLink}  >
                         <a className={`${classes.menu_item}`}>
-                            <span className={`${classes.icon_button}`}>{props.leftIcon}</span>
+                            <span className={`nav-event ${classes.icon_button}`}>{props.leftIcon}</span>
                             {props.children}
-                            <span className={`${classes.icon_right}`}>{props.rightIcon}</span>
+                            <span className={`nav-event ${classes.icon_right}`}>{props.rightIcon}</span>
                         </a>
                     </Link>
-                    // <Link href={props.dropLink} className="menu-item" onClick={() => { props.handleUser && setUser({}) && localStorage.removeItem('userId') }}>
-                    //     <span className="icon-button">{props.leftIcon}</span>
-                    //     {props.children}
-                    //     <span className="icon-right">{props.rightIcon}</span>
-                    // </Link>
 
 
                     :
@@ -133,19 +153,11 @@ function DropdownMenu(props) {
 
                     <Link href='#'  >
                         <a className={`nav-event ${classes.menu_item}`} onClick={(e) => { e.preventDefault(); props.goToMenu && setActiveMenu(props.goToMenu) }}>
-                            <span className={`${classes.icon_button}`}>{props.leftIcon}</span>
+                            <span className={`nav-event ${classes.icon_button}`}>{props.leftIcon}</span>
                             {props.children}
-                            <span className={`${classes.icon_right}`}>{props.rightIcon}</span>
+                            <span className={`nav-event ${classes.icon_right}`}>{props.rightIcon}</span>
                         </a>
                     </Link>
-
-
-                    // <a href='#' className={`nav-event menu-item`} onClick={(e) => { e.preventDefault(); props.goToMenu && setActiveMenu(props.goToMenu) }}>
-                    //     <span className="nav-event icon-button">{props.leftIcon}</span>
-                    //     {props.children}
-                    //     <span className="nav-event icon-right">{props.rightIcon}</span>
-                    // </a>
-
 
                 }
 
@@ -189,6 +201,46 @@ function DropdownMenu(props) {
                         goToMenu="Shop"
                     >
                         Shop
+                    </DropdownItem>
+
+                    <DropdownItem leftIcon={"^"} dropLink='/About'>About</DropdownItem>
+                    <DropdownItem leftIcon={"^"} dropLink='/Blog'>Blog</DropdownItem>
+                    <DropdownItem leftIcon={"^"} dropLink='/Features'>Features</DropdownItem>
+                    <DropdownItem leftIcon={"^"} dropLink='/Subcribe'>Subcribe</DropdownItem>
+
+
+
+
+
+
+                </div>
+            </CSSTransition>
+            <CSSTransition
+                // checks if condition is true to transition to this component
+                in={activeMenu === 'main2'}
+                timeout={500}
+                classNames={{
+                    "nav-event" : 'nav-event',
+                    enterActive: classes.menu_primary_Enter_Active,
+                    enterDone: classes.menu_primary_Enter_Done,
+                    exitActive: classes.menu_primary_Exit_Active,
+                    exitDone: classes.menu_primary_Exit_Done
+                }}
+                nodeRef={nodeRef3}
+                unmountOnExit
+                onEnter={(el)=>{calcHeight(el, nodeRef)}}>
+                {/* // give functions on enter */}
+                {/* >  */}
+                <div ref={nodeRef3}  className={`nav-event ${classes.menu}`}>
+                {/* <div  className={`nav-event ${classes.menu}`}> */}
+
+                    <DropdownItem leftIcon={"^"} dropLink='/'>Home</DropdownItem>
+                    <DropdownItem
+                        leftIcon={"^"}
+                        rightIcon={">"}
+                        goToMenu="Shop"
+                    >
+                        Poped
                     </DropdownItem>
 
                     <DropdownItem leftIcon={"^"} dropLink='/About'>About</DropdownItem>

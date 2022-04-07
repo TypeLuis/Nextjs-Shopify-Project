@@ -81,8 +81,8 @@
   transition: height 100ms ease-in-out, width 100ms ease-in-out;
 
   &:hover {
-    height: 15px;
-    width: 15px;
+    height: 11px;
+    width: 11px;
     background-color: white;
   }
 }
@@ -90,16 +90,16 @@
 // changes slider button based on img
 .image_container.img1 ~ .button_container {
   .slider_button:first-of-type {
-    height: 15px;
-    width: 15px;
+    height: 11px;
+    width: 11px;
     background-color: white;
   }
 }
 
 .image_container.img2 ~ .button_container {
   .slider_button:last-of-type {
-    height: 15px;
-    width: 15px;
+    height: 11px;
+    width: 11px;
     background-color: white;
   }
 }
