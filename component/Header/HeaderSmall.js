@@ -53,7 +53,6 @@ function NavItem(props) {
     
                 // if user clicks on element that doesn't contain 'nav-event' as it's first class name
                 if (e.target.classList[0] != 'nav-event') {
-                    console.log('hi')
                     setContent(false)
     
                     // this setTimeOut is here to let the animation of dropdown fade out

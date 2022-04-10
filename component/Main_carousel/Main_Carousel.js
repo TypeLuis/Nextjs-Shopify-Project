@@ -41,12 +41,12 @@ const Main_Carousel = () => {
     // const containerStyle = containerRef.current?.style
     
     const checkBoundary = (e) => {
+        
         // let outer = e.target.getBoundingClientRect()
         const containerStyle = containerRef.current?.style
 
 
         if(parseInt(containerStyle.left) > 0){
-            console.log('klk mani')
             containerStyle.left ='0px'
         }
 
