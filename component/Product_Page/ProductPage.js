@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import { useEffect, useRef } from 'react/cjs/react.development'
-
+import React, { useState, useRef } from 'react'
 import classes from './ProductPage.module.scss'
 
 import next from './icon-next.svg'
