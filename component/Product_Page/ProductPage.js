@@ -50,7 +50,7 @@ const ImageBox = (props) => {
 
     const changeActive = (newIndex) => {
         const index = newIndex % 4
-        console.log(index)
+        // console.log(index)
         const gallery = [...ref.current?.children]
         
         gallery.forEach(img => {
@@ -58,7 +58,7 @@ const ImageBox = (props) => {
         });
         //set active thumbnail
         gallery[index]?.classList.add(classes.active);
-        console.log(gallery)
+        // console.log(gallery)
     }
 
     const  nextImg = () => {
@@ -85,7 +85,7 @@ const ImageBox = (props) => {
         
 
         setSliceNum(CopySliceNum)
-        console.log(CopySliceNum)
+        // console.log(CopySliceNum)
         
         setMainImg(props.images[newIndex])
         
@@ -98,24 +98,21 @@ const ImageBox = (props) => {
         let CopySliceNum = sliceNum
         setImgIndex(newIndex)
         
+        // if hit prev from first index
         if(newIndex <  0){
             newIndex = props.images.length -1
-            setImgIndex(props.images.length -1)
-        }
-        
-        console.log(newIndex, props.images.length)
-        if(newIndex === props.images.length - 1){
-            console.log( 'klk', newIndex % 4)
+            setImgIndex(newIndex)
             CopySliceNum['num1'] = newIndex - newIndex % 4
             CopySliceNum['num2'] = props.images.length
         }
-
+        
+        // if index % 4 === 3, it means it's the last showing index of the 4 thumbnail 
         else if(newIndex % 4 === 3){
-            console.log('main',newIndex)
-            CopySliceNum['num1'] = newIndex - 3
+
+            // if num 2 is divisible by 4 (aka num2 % 4 === 0) then subtract 4 else, subtract remainder
             const num = CopySliceNum['num2'] % 4 === 0 ? 4 : CopySliceNum['num2'] % 4
+            CopySliceNum['num1'] = newIndex - 3
             CopySliceNum['num2'] -= num
-            // CopySliceNum['num2'] -= CopySliceNum['num2'] % 4
         }
         
         if (CopySliceNum['num1'] <= 0) {
@@ -124,9 +121,8 @@ const ImageBox = (props) => {
         }
 
         setSliceNum(CopySliceNum)
-        console.log(CopySliceNum)
         setMainImg(props.images[newIndex])
-        console.log(previous)
+        // console.log(previous)
         
         changeActive(newIndex)
     }
@@ -152,6 +148,7 @@ const ImageBox = (props) => {
         const maxNum = props.images.length
         let CopySliceNum = sliceNum
 
+        // if clicked next on last row
         if (CopySliceNum['num2'] >= maxNum) {
             CopySliceNum['num2'] = 4
             CopySliceNum['num1'] = 0
@@ -162,7 +159,7 @@ const ImageBox = (props) => {
             CopySliceNum['num1'] += 4
         }
 
-        
+        // changes num2 to the lens of the array
         if (CopySliceNum['num2'] > maxNum){
             CopySliceNum['num2'] = maxNum
         }
@@ -171,18 +168,19 @@ const ImageBox = (props) => {
         setImgIndex(CopySliceNum['num1'])
         setMainImg(props.images[CopySliceNum['num1']])
         changeActive(CopySliceNum['num1'])
-        console.log(sliceNum)
+        // console.log(sliceNum)
     }
 
     const prevThumbImg = () => {
         const minNum = 0
         let CopySliceNum = sliceNum
 
+        // if clicked prev on first row
         if (CopySliceNum['num1'] <= minNum) {
             // const difference = CopySliceNum['num2'] - CopySliceNum['num1']
-            const length = props.images.length - 1
-            CopySliceNum['num1'] = length - length % 4
-            CopySliceNum['num2'] = length
+            const index = props.images.length - 1
+            CopySliceNum['num1'] = index - index % 4
+            CopySliceNum['num2'] = index
         }
         else{
             CopySliceNum['num2'] -= 4
@@ -206,7 +204,7 @@ const ImageBox = (props) => {
         setImgIndex(CopySliceNum['num1'])
         setMainImg(props.images[CopySliceNum['num1']])
         changeActive(CopySliceNum['num1'])
-        console.log(sliceNum)
+        // console.log(sliceNum)
     }
     
     // console.log(images.length)
@@ -224,17 +222,11 @@ const ImageBox = (props) => {
 
             <div  ref={ref} className={classes.thumb_gallery}>
 
+                {/* using slice to show a max of 4 items */}
                 {props.images.slice(sliceNum['num1'], sliceNum['num2']).map((item, i)=>{
-                    // console.log(i + 4)
-                    // console.log(props.images.length)
-                    let index = i
-                    if (sliceNum['num2'] > 4 ) index += sliceNum['num1']
-                    // console.log(index)
-                    console.log(8 % 4)
+                    let index = i + sliceNum['num1']
 
                     return (
-
-                        // i < 4 &&
 
                         <div key={i} className={`${classes.pic} ${i === 0 ? classes.active : ''}`}>
 
