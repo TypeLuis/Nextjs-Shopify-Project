@@ -1,9 +1,23 @@
 import classes from './Card.module.scss'
 import {useEffect} from 'react'
+import ReactStars from "react-rating-stars-component";
 
 const Card = () => {
 
+    const thirdExample = {
+        size: 30,
+        count: 5,
+        isHalf: true,
+        edit: false,
+        value: 3.7,
+        activeColor: "yellow",
+        onChange: (newValue) => {
+          console.log(`Example 3: new value is ${newValue}`);
+        }
+    };
+
     useEffect(()=>{
+
         const cards = document.getElementsByClassName(classes.card)
 
 
@@ -47,6 +61,7 @@ const Card = () => {
             }
         }
     }, [])
+
     return (
         <div className={classes.card}>
             <div className={classes.product__image}>
@@ -54,6 +69,9 @@ const Card = () => {
             </div>
             <div className={classes.product__title}>
                 Product title display
+            </div>
+            <div className={classes.product_rating}>
+                <ReactStars {...thirdExample} />
             </div>
             <div className={classes.product__price}>
                 <span>

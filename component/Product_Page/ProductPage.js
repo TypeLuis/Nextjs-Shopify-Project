@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import classes from './ProductPage.module.scss'
 
 import next from './icon-next.svg'
@@ -31,8 +31,13 @@ const ProductPage = () => {
         'https://images.unsplash.com/photo-1649450960338-10fda3757c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
 
         'https://images.unsplash.com/photo-1649510227325-5e40e1d87caa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+        
         'https://images.unsplash.com/photo-1649512848285-04210dc58d21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
     ]
+    useEffect(()=>{
+
+        console.log(window.innerWidth)
+    })
   return (
     <div className={classes.content}>
         <ImageBox images={images}></ImageBox>
@@ -281,7 +286,7 @@ const Product = () => {
 
                 {/* Quantity */}
                 <div className={classes.counter_wrapper}>
-                    <img onClick={()=>{setCounter(counter - 1)}} className={classes.btnMinus} src={minus.src} alt="icon minus"/>
+                    <img onClick={()=>{counter > 1 && setCounter(counter - 1)}} className={classes.btnMinus} src={minus.src} alt="icon minus"/>
 
                     <div className={classes.counter}>{counter}</div>
 
