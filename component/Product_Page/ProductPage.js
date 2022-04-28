@@ -31,25 +31,25 @@ const ProductPage = () => {
         'https://images.unsplash.com/photo-1649450960338-10fda3757c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
 
         'https://images.unsplash.com/photo-1649510227325-5e40e1d87caa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
-        
+
         'https://images.unsplash.com/photo-1649512848285-04210dc58d21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
     ]
-    useEffect(()=>{
+    useEffect(() => {
 
         console.log(window.innerWidth)
     })
-  return (
-    <div className={classes.content}>
-        <ImageBox images={images}></ImageBox>
-        <Product ></Product>
-    </div>
-  )
+    return (
+        <div className={classes.content}>
+            <ImageBox images={images}></ImageBox>
+            <Product ></Product>
+        </div>
+    )
 }
 
 const ImageBox = (props) => {
     const [imgIndex, setImgIndex] = useState(0)
     const [mainImg, setMainImg] = useState(props.images[imgIndex])
-    const [sliceNum, setSliceNum] = useState({'num1' : 0, 'num2' : 4})
+    const [sliceNum, setSliceNum] = useState({ 'num1': 0, 'num2': 4 })
 
     const ref = useRef()
 
@@ -57,7 +57,7 @@ const ImageBox = (props) => {
         const index = newIndex % 4
         // console.log(index)
         const gallery = [...ref.current?.children]
-        
+
         gallery.forEach(img => {
             img.classList.remove(classes.active);
         });
@@ -66,75 +66,75 @@ const ImageBox = (props) => {
         // console.log(gallery)
     }
 
-    const  nextImg = () => {
+    const nextImg = () => {
         let newIndex = imgIndex + 1
         let CopySliceNum = sliceNum
         setImgIndex(newIndex)
 
-        
-        if(newIndex >= props.images.length){
+
+        if (newIndex >= props.images.length) {
             newIndex = 0
             setImgIndex(0)
         }
-        if(newIndex % 4 === 0){
+        if (newIndex % 4 === 0) {
             CopySliceNum['num1'] = newIndex
             CopySliceNum['num2'] = CopySliceNum['num1'] + 4
         }
 
-        if(CopySliceNum['num2'] >= props.images.length){
+        if (CopySliceNum['num2'] >= props.images.length) {
             CopySliceNum['num2'] = props.images.length
         }
-        if(CopySliceNum['num1'] >= props.images.length){
+        if (CopySliceNum['num1'] >= props.images.length) {
             CopySliceNum['num1'] = props.images.length - 1
         }
-        
+
 
         setSliceNum(CopySliceNum)
         // console.log(CopySliceNum)
-        
+
         setMainImg(props.images[newIndex])
-        
-       changeActive(newIndex)
-        
+
+        changeActive(newIndex)
+
     }
 
     const prevImg = () => {
         let newIndex = imgIndex - 1
         let CopySliceNum = sliceNum
         setImgIndex(newIndex)
-        
+
         // if hit prev from first index
-        if(newIndex <  0){
-            newIndex = props.images.length -1
+        if (newIndex < 0) {
+            newIndex = props.images.length - 1
             setImgIndex(newIndex)
             CopySliceNum['num1'] = newIndex - newIndex % 4
             CopySliceNum['num2'] = props.images.length
         }
-        
+
         // if index % 4 === 3, it means it's the last showing index of the 4 thumbnail 
-        else if(newIndex % 4 === 3){
+        else if (newIndex % 4 === 3) {
 
             // if num 2 is divisible by 4 (aka num2 % 4 === 0) then subtract 4 else, subtract remainder
             const num = CopySliceNum['num2'] % 4 === 0 ? 4 : CopySliceNum['num2'] % 4
             CopySliceNum['num1'] = newIndex - 3
             CopySliceNum['num2'] -= num
         }
-        
+
         if (CopySliceNum['num1'] <= 0) {
-            CopySliceNum['num1'] = 0 
+            CopySliceNum['num1'] = 0
             CopySliceNum['num2'] = 4
         }
 
         setSliceNum(CopySliceNum)
         setMainImg(props.images[newIndex])
         // console.log(previous)
-        
+
         changeActive(newIndex)
     }
 
     const thumbClick = (e) => {
         const gallery = [...ref.current?.children]
-        
+
         gallery.forEach(img => {
             img.classList.remove(classes.active);
         });
@@ -158,14 +158,14 @@ const ImageBox = (props) => {
             CopySliceNum['num2'] = 4
             CopySliceNum['num1'] = 0
         }
-        else{
+        else {
 
             CopySliceNum['num2'] += 4
             CopySliceNum['num1'] += 4
         }
 
         // changes num2 to the lens of the array
-        if (CopySliceNum['num2'] > maxNum){
+        if (CopySliceNum['num2'] > maxNum) {
             CopySliceNum['num2'] = maxNum
         }
 
@@ -187,20 +187,20 @@ const ImageBox = (props) => {
             CopySliceNum['num1'] = index - index % 4
             CopySliceNum['num2'] = index
         }
-        else{
+        else {
             CopySliceNum['num2'] -= 4
             CopySliceNum['num1'] -= 4
 
         }
 
-        
-        if (CopySliceNum['num1'] <= minNum){
+
+        if (CopySliceNum['num1'] <= minNum) {
             CopySliceNum['num1'] = minNum
             CopySliceNum['num2'] = 4
         }
 
         // If last row has less than 4 imgs
-        else if (CopySliceNum['num2'] - CopySliceNum['num1'] != 4){
+        else if (CopySliceNum['num2'] - CopySliceNum['num1'] != 4) {
             const difference = CopySliceNum['num2'] - CopySliceNum['num1']
             CopySliceNum['num2'] += 4 - difference
         }
@@ -211,42 +211,42 @@ const ImageBox = (props) => {
         changeActive(CopySliceNum['num1'])
         // console.log(sliceNum)
     }
-    
+
     // console.log(images.length)
     return (
         <section className={classes.imageBox}>
             <img className={classes.product_hero} src={mainImg} alt="image product" />
 
             <div onClick={prevImg} className={`${classes.previous} ${classes.arrow}`}>
-                <img src={previous.src} alt="icon previous"/>
+                <img src={previous.src} alt="icon previous" />
             </div>
 
-            <div onClick={()=>{nextImg()}} className={`${classes.next} ${classes.arrow}`}>
-                <img src={next.src} alt="icon next"/>
+            <div onClick={() => { nextImg() }} className={`${classes.next} ${classes.arrow}`}>
+                <img src={next.src} alt="icon next" />
             </div>
 
-            <div  ref={ref} className={classes.thumb_gallery}>
+            <div ref={ref} className={classes.thumb_gallery}>
 
                 {/* using slice to show a max of 4 items */}
-                {props.images.slice(sliceNum['num1'], sliceNum['num2']).map((item, i)=>{
+                {props.images.slice(sliceNum['num1'], sliceNum['num2']).map((item, i) => {
                     let index = i + sliceNum['num1']
 
                     return (
 
                         <div key={i} className={`${classes.pic} ${i === 0 ? classes.active : ''}`}>
 
-                            <img onClick={(e)=>{thumbClick(e)}} src={item} alt={`thumb-${index + 1}`} />
+                            <img onClick={(e) => { thumbClick(e) }} src={item} alt={`thumb-${index + 1}`} />
 
                         </div>
                     )
                 })}
 
-                <div onClick={()=>{prevThumbImg()}} className={`${classes.previous} ${classes.thumb_arrow}`}>
-                    <img src={previous.src} alt="icon previous"/>
+                <div onClick={() => { prevThumbImg() }} className={`${classes.previous} ${classes.thumb_arrow}`}>
+                    <img src={previous.src} alt="icon previous" />
                 </div>
 
-                <div onClick={()=>{nextThumbImg()}} className={`${classes.next} ${classes.thumb_arrow}`}>
-                    <img src={next.src} alt="icon next"/>
+                <div onClick={() => { nextThumbImg() }} className={`${classes.next} ${classes.thumb_arrow}`}>
+                    <img src={next.src} alt="icon next" />
                 </div>
             </div>
 
@@ -286,16 +286,16 @@ const Product = () => {
 
                 {/* Quantity */}
                 <div className={classes.counter_wrapper}>
-                    <img onClick={()=>{counter > 1 && setCounter(counter - 1)}} className={classes.btnMinus} src={minus.src} alt="icon minus"/>
+                    <img onClick={() => { counter > 1 && setCounter(counter - 1) }} className={classes.btnMinus} src={minus.src} alt="icon minus" />
 
                     <div className={classes.counter}>{counter}</div>
 
-                    <img className={classes.btnPlus} onClick={()=>{setCounter(counter + 1)}} src={plus.src} alt="icon plus"/>
+                    <img className={classes.btnPlus} onClick={() => { setCounter(counter + 1) }} src={plus.src} alt="icon plus" />
                 </div>
 
                 {/* Add Cart */}
                 <div className={classes.btn}>
-                    <img src={cart.src} alt="icon cart"/>
+                    <img src={cart.src} alt="icon cart" />
                     <p>Add to cart</p>
                 </div>
 

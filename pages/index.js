@@ -14,21 +14,21 @@ const HomePage = (props) => {
   const observe = (className) => {
 
     const slider = document.getElementsByClassName('slider')
-  
-  
+
+
     const appearOptions = {
       threshold: 0,
       rootMargin: "-50px 0px"
     }
-  
+
     const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-  
+
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
           if (entry.boundingClientRect.top > 0) {
             // Element is above the viewport
             // get's all the childNodes from the horizontal Scrolling Element
-            for(let element of entry.target.childNodes){
+            for (let element of entry.target.childNodes) {
               // You can import multiple module.scss classes, each import are still separate in classes
               element.classList.remove(className)
             }
@@ -39,20 +39,20 @@ const HomePage = (props) => {
           }
         }
         else {
-  
-          for(let element of entry.target.childNodes){
+
+          for (let element of entry.target.childNodes) {
             element.classList.add(className)
           }
         }
       })
     }, appearOptions)
-    
+
     appearOnScroll.observe(slider[0])
   }
-  useEffect(()=>{
+  useEffect(() => {
     observe(cardClass.appear)
   }, [])
-  
+
   return (
     <div className={classes.home_body}>
       {/* <div>
@@ -63,8 +63,6 @@ const HomePage = (props) => {
       </div> */}
 
       <Main_Carousel />
-
-      <Reviews />
 
       <Right />
 
@@ -80,7 +78,7 @@ const HomePage = (props) => {
 
       <Right />
 
-        <Card />
+      <Card />
       <Left />
 
       <Right />
