@@ -1,6 +1,7 @@
 .main {
     min-height: 1800px;
     width: 95%;
+    max-width: 1220px;
     // border: 1px solid black;
     box-shadow: 1px 3px 10px 0px slategray;
     margin: 0 auto 100px auto;
@@ -12,6 +13,7 @@
         transition: .5s ease-in;
         overflow: hidden;
         border-bottom: .1px solid rgba(0, 0, 0, 0.192);
+        margin: 0 2em;
         
         label {
             font-weight: 400;
@@ -69,6 +71,7 @@
     align-items: center;
     // justify-content: center, space-between;
     padding: 2.5em;
+    margin: 0 2em;
     
     .button {
         button{
@@ -127,7 +130,7 @@
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1270px) {
     .test{
         display: flex;
         flex-direction: column;
@@ -160,5 +163,68 @@
                 width: Min(100%, 500px);
             }
         }
+    }
+}
+
+.reviewer{
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+    // margin: 0 auto;
+    // margin: auto;
+    // padding: .5em 0 0 2em;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 2em 0;
+    margin: 0 2em;
+    .reviewRating{
+        display: flex;
+        align-items: center;
+        gap: .5em;
+
+        .date{
+            position: relative;
+            top: 2px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+
+    .reviewName{
+        display: flex;
+        align-items: center;
+        gap: .5em;
+
+        .verified{
+            border: 1px solid black;
+            padding: .25em;
+            color: white;
+            background-color: black;
+            font-weight: 600;
+        }
+        
+        .name{
+            font-weight: 700;
+            font-size: 18px;
+            
+        }
+
+    }
+
+    .reviewDescription{
+        h2{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            margin: 0 auto;
+            padding: 0;
+            width: Min(80%, 80ch);
+            font-size: larger;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
     }
 }

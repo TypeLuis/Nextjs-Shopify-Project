@@ -153,6 +153,35 @@ const Reviews = () => {
                 </div>
 
             </form>
+
+            <div>
+
+                <div className={classes.reviewer}>
+
+                    <div className={classes.reviewRating}>
+
+                        <ReactStars {...starExample} />
+                        <span className={classes.date}>04/03/2022</span>
+                    </div>
+
+                    <div className={classes.reviewName}>
+                        <span className={classes.verified}>Verified</span>
+                        <span className={classes.name}>Luis Lopez</span>
+                    </div>
+
+
+                    <div className={classes.reviewDescription}>
+                        <h2>Test Title</h2>
+                        <p>
+                            6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful….I worked with Cami to resolve and issue and she was so helpful!!
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
     )
 }
