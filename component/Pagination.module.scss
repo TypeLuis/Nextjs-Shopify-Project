@@ -1,0 +1,19 @@
+.pagination {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: Clamp(1.5em, 6vw, 1.7em);
+  font-weight: 600;
+
+  span {
+    cursor: pointer;
+    transition: 250ms linear;
+
+    &:hover {
+      color: crimson;
+    }
+  }
+}
