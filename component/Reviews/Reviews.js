@@ -295,6 +295,15 @@ const Reviews = () => {
             },
         },
     });
+
+    const style = {
+        'color': '#fde16c',
+  'border': '0.5px solid rgba(112, 128, 144, 0.534)',
+  'height': '18px',
+  'width': '120px',
+  'position': 'relative',
+  'top': '6px',
+    }
     
     return (
 
@@ -307,16 +316,20 @@ const Reviews = () => {
                         <h2>Customer Reviews</h2>
                         <Rating size='large' precision={.5} value={3.7} readOnly />
                         <p>Based on X reviews</p>
-                    </div>
+                    </div> 
 
                     <div className={classes.ratingDisplay}>
                         <div className={classes.ratingValue}>
                             <Rating className={classes.progressRating} value={5} readOnly />
 
-                            <ThemeProvider theme={theme}>
+                            {/* <div> */}
 
-                                <LinearProgress color="yellow" className={classes.progressBar}  variant="determinate"  value={80} />
-                            </ThemeProvider>
+                                <ThemeProvider theme={theme}>
+
+                                    <LinearProgress style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={80} />
+                                </ThemeProvider>
+                            {/* </div> */}
+
 
                             <span className={classes.ratingPercent}>80%</span>
                             <span className={classes.ratingPercent}>(33)</span>
@@ -325,7 +338,7 @@ const Reviews = () => {
                             <Rating value={4} readOnly />
                             <ThemeProvider theme={theme}>
 
-                                <LinearProgress color="yellow" className={classes.progressBar}  variant="determinate"  value={20} />
+                                <LinearProgress style={style}  color="yellow" className={classes.progressBar}  variant="determinate"  value={20} />
                             </ThemeProvider>
                             {/* <LinearProgress color='inherit' className={classes.progressBar}  variant="determinate"  value={20} /> */}
                             <span className={classes.ratingPercent}>20%</span>
@@ -335,7 +348,7 @@ const Reviews = () => {
                             <Rating value={3} readOnly />
                              <ThemeProvider theme={theme}>
 
-                                <LinearProgress color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
+                                <LinearProgress style={style}  color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
                             </ThemeProvider>
                             <span className={classes.ratingPercent}>0%</span>
                             <span className={classes.ratingPercent}>(0)</span>
@@ -344,7 +357,7 @@ const Reviews = () => {
                             <Rating value={2} readOnly />
                              <ThemeProvider theme={theme}>
 
-                                <LinearProgress color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
+                                <LinearProgress style={style} style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
                             </ThemeProvider>
                             <span className={classes.ratingPercent}>0%</span>
                             <span className={classes.ratingPercent}>(0)</span>
@@ -353,7 +366,7 @@ const Reviews = () => {
                             <Rating value={1} readOnly />
                              <ThemeProvider theme={theme}>
 
-                                <LinearProgress color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
+                                <LinearProgress style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
                             </ThemeProvider>
                             <span className={classes.ratingPercent}>0%</span>
                             <span className={classes.ratingPercent}>(0)</span>
