@@ -1,9 +1,20 @@
 import React, { useEffect, useRef } from 'react'
 import classes from './Main_Carousel.module.scss'
+import {useRouter} from 'next/router'
+
 
 const Main_Carousel = () => {
 
+
     const containerRef = useRef(null)
+
+
+    const router = useRouter()
+
+    const goToAbout = () => {
+        router.push('/About')
+    }
+
 
     const carouselSlide = () => {
 
@@ -280,7 +291,7 @@ const Main_Carousel = () => {
 
                         <h2>The Test Title</h2>
                         <p>Shop the Title</p>
-                        <button>Shop now</button>
+                        <button onClick={goToAbout}>Shop now</button>
 
                     </div>
 
@@ -298,7 +309,7 @@ const Main_Carousel = () => {
 
                         <h2>The Test Title</h2>
                         <p>Shop the Title</p>
-                        <button>Shop now</button>
+                        <button onClick={goToAbout}>Shop now</button>
                     </div>
                 </div>
 

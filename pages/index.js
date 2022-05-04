@@ -8,9 +8,12 @@ import Transition_Image from '../component/Transition_Image';
 import Card from '../component/Card';
 import Main_Carousel from '../component/Main_carousel/Main_Carousel';
 import Reviews from '../component/Reviews/Reviews';
-// import Header from '../component/Header';
+
 
 const HomePage = (props) => {
+
+
+
   const observe = (className) => {
 
     const slider = document.getElementsByClassName('slider')
