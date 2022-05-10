@@ -169,7 +169,7 @@ const Main_Carousel = () => {
         const containerClass = containerRef.current?.classList
 
         containerStyle.transition = 'left 1'
-        // containerClass.add(classes.img1)
+        containerClass.add(classes.img1)
         containerStyle.left = 0
         let myInterval
 
@@ -178,7 +178,7 @@ const Main_Carousel = () => {
 
 
 
-        // myInterval = setInterval(carouselSlide, 8000)
+        myInterval = setInterval(carouselSlide, 8000)
 
 
         const buttonSlider = (myInterval) => {
