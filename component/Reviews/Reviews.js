@@ -13,7 +13,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -21,7 +21,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -37,7 +37,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -45,7 +45,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -53,7 +53,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -61,7 +61,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -69,7 +69,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -77,7 +77,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -85,7 +85,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -93,7 +93,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -101,7 +101,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -109,7 +109,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -117,7 +117,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -125,7 +125,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -133,7 +133,7 @@ const Arr = [
             'name':'Luis Lopez',
             'date':'04/03/2022',
             'verified':true,
-            'value':3.7,
+            'value':3,
             'title':'Test Title',
             'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
         },
@@ -171,6 +171,41 @@ const Reviews = () => {
     const formRef = useRef(null)
     const reviewsRef = useRef(null)
 
+    const getRatingData = (array) => {
+
+        const list = []
+        let total = 0
+
+        for(let num of [1,2,3,4,5]) {
+
+            const totalTally = array.filter(x => x.value === num).length
+
+            total += totalTally
+
+            const percentage = Math.round((totalTally / array.length) * 100)
+
+
+            list.push({
+                'rate' : num,
+                'amount' : totalTally,
+                'percentage' : percentage
+            })
+        }
+
+        const average = total / list.length;
+
+        console.log(total, array.length)
+
+        return {
+            'total' : total,
+            'average' : average,
+            'data' : list.reverse()
+        }
+
+    }
+
+    const reviewData = getRatingData(Arr)
+
     
 
 
@@ -193,12 +228,14 @@ const Reviews = () => {
         let formCopy = { ...form }
         let id = e.target.id
         let value = e.target.value
+
         if(id.split('-')[0] === 'mui'){
             id = 'rating'
             value = Number(e.target.value)
         }
+        
         formCopy[id] = value
-        console.log(formCopy)
+        // console.log(formCopy)
         // console.log(e, id.split('-')[0] === 'mui', Number(value), id)
         setForm(formCopy)
 
@@ -206,22 +243,7 @@ const Reviews = () => {
 
     
 
-    useEffect(()=>{
-
-        const resize = () => {
-            reviewsRef.current?.style.height = `${reviewsRef.current?.scrollHeight}px`
-
-            if(window.innerWidth < 600){
-
-                formRef.current.style.height = `0px`
-                setReview('Write a Review')
-            }
-            
-        }
-        window.onresize = resize
-        reviewsRef.current?.style.height = `${reviewsRef.current?.scrollHeight}px`
-        // setSorted(trueFirst)
-    },[])
+    
 
 
     
@@ -258,7 +280,6 @@ const Reviews = () => {
                     const sortByLow = sorted.sort((a, b) => a.value - b.value)
                     setChangeSort(!changeSort)
                     setSorted(sortByLow)
-                console.log(value)
             break
         }
     }
@@ -304,6 +325,30 @@ const Reviews = () => {
   'position': 'relative',
   'top': '6px',
     }
+
+    useEffect(()=>{
+
+        const resize = () => {
+            reviewsRef.current?.style.height = `${reviewsRef.current?.scrollHeight}px`
+
+            if(window.innerWidth < 600){
+
+                formRef.current.style.height = `0px`
+                setReview('Write a Review')
+            }
+            
+        }
+        window.onresize = resize
+
+        reviewsRef.current?.style.height = `${reviewsRef.current?.scrollHeight}px`
+
+        
+
+        // console.log('count', count)
+        console.log(reviewData)
+        console.log(pageData)
+        // setSorted(trueFirst)
+    },[])
     
     return (
 
@@ -314,63 +359,33 @@ const Reviews = () => {
                     <div className={classes.ratingHeader}>
 
                         <h2>Customer Reviews</h2>
-                        <Rating size='large' precision={.5} value={3.7} readOnly />
-                        <p>Based on X reviews</p>
+                        <Rating size='large' precision={.5} value={reviewData.average} readOnly />
+                        <p>Based on {reviewData.total} reviews</p>
                     </div> 
 
                     <div className={classes.ratingDisplay}>
-                        <div className={classes.ratingValue}>
-                            <Rating className={classes.progressRating} value={5} readOnly />
 
-                            {/* <div> */}
+                        {reviewData.data.map((item,i)=> {
+                            return(
 
-                                <ThemeProvider theme={theme}>
+                                <div className={classes.ratingValue}>
+                                    <Rating className={classes.progressRating} value={item.rate} readOnly />
 
-                                    <LinearProgress style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={80} />
-                                </ThemeProvider>
-                            {/* </div> */}
+                                    {/* <div> */}
+
+                                        <ThemeProvider theme={theme}>
+
+                                            <LinearProgress style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={item.percentage} />
+                                        </ThemeProvider>
+                                    {/* </div> */}
 
 
-                            <span className={classes.ratingPercent}>80%</span>
-                            <span className={classes.ratingPercent}>(33)</span>
-                        </div>
-                        <div className={classes.ratingValue}>
-                            <Rating value={4} readOnly />
-                            <ThemeProvider theme={theme}>
+                                    <span className={classes.ratingPercent}>{item.percentage}%</span>
+                                    <span className={classes.ratingPercent}>({item.amount})</span>
+                                </div>
+                            )
 
-                                <LinearProgress style={style}  color="yellow" className={classes.progressBar}  variant="determinate"  value={20} />
-                            </ThemeProvider>
-                            {/* <LinearProgress color='inherit' className={classes.progressBar}  variant="determinate"  value={20} /> */}
-                            <span className={classes.ratingPercent}>20%</span>
-                            <span className={classes.ratingPercent}>(33)</span>
-                        </div>
-                        <div className={classes.ratingValue}>
-                            <Rating value={3} readOnly />
-                             <ThemeProvider theme={theme}>
-
-                                <LinearProgress style={style}  color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
-                            </ThemeProvider>
-                            <span className={classes.ratingPercent}>0%</span>
-                            <span className={classes.ratingPercent}>(0)</span>
-                        </div>
-                        <div className={classes.ratingValue}>
-                            <Rating value={2} readOnly />
-                             <ThemeProvider theme={theme}>
-
-                                <LinearProgress style={style} style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
-                            </ThemeProvider>
-                            <span className={classes.ratingPercent}>0%</span>
-                            <span className={classes.ratingPercent}>(0)</span>
-                        </div>
-                        <div className={classes.ratingValue}>
-                            <Rating value={1} readOnly />
-                             <ThemeProvider theme={theme}>
-
-                                <LinearProgress style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
-                            </ThemeProvider>
-                            <span className={classes.ratingPercent}>0%</span>
-                            <span className={classes.ratingPercent}>(0)</span>
-                        </div>
+                        })}
 
 
                     </div>
@@ -415,7 +430,6 @@ const Reviews = () => {
                         value={form.rating}
                         onChange={(e, newValue) => {
                            changeForm(e)
-                            // setValue(newValue);
                         }}
                     />
 
