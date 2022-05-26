@@ -3,15 +3,25 @@
   overflow: hidden;
   transition: background-color 1.25s linear;
   background-color: black;
+  //   padding-top: Min(calc(100vh - 50vw), 800px);
+  //   padding-top: 16.83%;
+  //   padding-top: 8.83%;
+  @media screen and (max-width: 900px) {
+    padding-top: 0;
+  }
   //   border-radius: 1%;
   .imageContainer {
     // padding: 5px;
     position: relative;
     width: 100vw;
-    height: 40vw;
-    max-height: 700px;
+    height: 50vw;
+    @media screen and (max-width: 900px) {
+      height: 50vh;
+    }
+    max-height: 800px;
     img {
       // position: ;
+      //   background-color: #fff;
       transition: opacity 1.5s ease-in, transform 1s ease-in;
       opacity: 0%;
       object-fit: cover;
@@ -54,13 +64,13 @@
       margin: 0;
       padding: 0;
       margin-top: 10px;
-      font-size: Clamp(8px, 7vw, 25px);
+      font-size: Clamp(8px, 5vw, 25px);
     }
   }
 }
 
 .bannerContainer.appear {
-  background-color: gray;
+  background-color: slategray;
   .imageContainer {
     img {
       // position: ;

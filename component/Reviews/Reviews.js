@@ -333,7 +333,7 @@ const Reviews = () => {
 
             if(window.innerWidth < 600){
 
-                formRef.current.style.height = `0px`
+                formRef.current?.style.height = `0px`
                 setReview('Write a Review')
             }
             
