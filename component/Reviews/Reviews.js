@@ -9,143 +9,143 @@ import Pagination from '../Pagination';
 
 
 const Arr = [
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Bopez',
-            'date':'04/03/2022',
-            'verified':false,
-            'value':2,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':3.7,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-        {
-            'name':'Luis Lopez',
-            'date':'04/03/2022',
-            'verified':true,
-            'value':5,
-            'title':'Test Title',
-            'description':'6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
-        },
-    ]
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Bopez',
+        'date': '04/03/2022',
+        'verified': false,
+        'value': 2,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 3,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+    {
+        'name': 'Luis Lopez',
+        'date': '04/03/2022',
+        'verified': true,
+        'value': 5,
+        'title': 'Test Title',
+        'description': '6 more weeks until my first baby is here! Can’t wait to use my gorgeous ivory diaper bag!! Everything was thought out so perfectly! And customer service was wonderful…'
+    },
+]
 
 const Reviews = () => {
 
@@ -171,7 +171,42 @@ const Reviews = () => {
     const formRef = useRef(null)
     const reviewsRef = useRef(null)
 
-    
+    const getRatingData = (array) => {
+
+        const list = []
+        let total = 0
+
+        for (let num of [1, 2, 3, 4, 5]) {
+
+            const totalTally = array.filter(x => x.value === num).length
+
+            total += totalTally
+
+            const percentage = Math.round((totalTally / array.length) * 100)
+
+
+            list.push({
+                'rate': num,
+                'amount': totalTally,
+                'percentage': percentage
+            })
+        }
+
+        const average = total / list.length;
+
+        console.log(total, array.length)
+
+        return {
+            'total': total,
+            'average': average,
+            'data': list.reverse()
+        }
+
+    }
+
+    const reviewData = getRatingData(Arr)
+
+
 
 
     const buttonClick = (e) => {
@@ -193,84 +228,70 @@ const Reviews = () => {
         let formCopy = { ...form }
         let id = e.target.id
         let value = e.target.value
-        if(id.split('-')[0] === 'mui'){
+
+        if (id.split('-')[0] === 'mui') {
             id = 'rating'
             value = Number(e.target.value)
         }
+
         formCopy[id] = value
-        console.log(formCopy)
+        // console.log(formCopy)
         // console.log(e, id.split('-')[0] === 'mui', Number(value), id)
         setForm(formCopy)
 
     }
 
-    
-
-    useEffect(()=>{
-
-        const resize = () => {
-            reviewsRef.current?.style.height = `${reviewsRef.current?.scrollHeight}px`
-
-            if(window.innerWidth < 600){
-
-                formRef.current.style.height = `0px`
-                setReview('Write a Review')
-            }
-            
-        }
-        window.onresize = resize
-        reviewsRef.current?.style.height = `${reviewsRef.current?.scrollHeight}px`
-        // setSorted(trueFirst)
-    },[])
 
 
-    
+
+
+
+
     const changeSelection = (e) => {
         const value = e.target.value
         const ref = reviewsRef
 
         ref.current.classList.add(classes.change)
         ref.current.style.height = `0px`
-        
-        setTimeout(()=>{
+
+        setTimeout(() => {
             ref.current.classList.remove(classes.change)
             ref.current.style.height = `${ref.current.scrollHeight}px`
         }, 1000)
 
-      
-        
-        switch(value){
+
+
+        switch (value) {
             case 'recent':
                 console.log(value)
-            break
-            
+                break
+
             case 'high':
 
                 const sortByHigh = sorted.sort((a, b) => b.value - a.value)
 
                 setChangeSort(!changeSort)
                 setSorted(sortByHigh)
-                
+
                 break
-                
-                case 'low':
-                    
-                    const sortByLow = sorted.sort((a, b) => a.value - b.value)
-                    setChangeSort(!changeSort)
-                    setSorted(sortByLow)
-                console.log(value)
-            break
+
+            case 'low':
+
+                const sortByLow = sorted.sort((a, b) => a.value - b.value)
+                setChangeSort(!changeSort)
+                setSorted(sortByLow)
+                break
         }
     }
 
     // https://shouts.dev/articles/easiest-way-to-paginate-an-array-in-javascript
     const paginator = (items, current_page, per_page_items) => {
         let page = current_page || 1,
-        per_page = per_page_items || 10,
-        offset = (page - 1) * per_page,
+            per_page = per_page_items || 10,
+            offset = (page - 1) * per_page,
 
-        paginatedItems = items?.slice(offset).slice(0, per_page_items),
-        total_pages = Math.ceil(items?.length / per_page);
+            paginatedItems = items?.slice(offset).slice(0, per_page_items),
+            total_pages = Math.ceil(items?.length / per_page);
 
         return {
             page: page,
@@ -290,21 +311,45 @@ const Reviews = () => {
     const theme = createTheme({
         palette: {
             yellow: {
-            main: '#faaf00',
-            contrastText: '#fff',
+                main: '#faaf00',
+                contrastText: '#fff',
             },
         },
     });
 
     const style = {
         'color': '#fde16c',
-  'border': '0.5px solid rgba(112, 128, 144, 0.534)',
-  'height': '18px',
-  'width': '120px',
-  'position': 'relative',
-  'top': '6px',
+        'border': '0.5px solid rgba(112, 128, 144, 0.534)',
+        'height': '18px',
+        'width': '120px',
+        'position': 'relative',
+        'top': '6px',
     }
-    
+
+    useEffect(() => {
+
+        const resize = () => {
+            reviewsRef.current?.style.height = `${reviewsRef.current?.scrollHeight}px`
+
+            if (window.innerWidth < 600) {
+
+                formRef.current?.style.height = `0px`
+                setReview('Write a Review')
+            }
+
+        }
+        window.onresize = resize
+
+        reviewsRef.current?.style.height = `${reviewsRef.current?.scrollHeight}px`
+
+
+
+        // console.log('count', count)
+        console.log(reviewData)
+        console.log(pageData)
+        // setSorted(trueFirst)
+    }, [])
+
     return (
 
         <div className={classes.main}>
@@ -314,63 +359,33 @@ const Reviews = () => {
                     <div className={classes.ratingHeader}>
 
                         <h2>Customer Reviews</h2>
-                        <Rating size='large' precision={.5} value={3.7} readOnly />
-                        <p>Based on X reviews</p>
-                    </div> 
+                        <Rating size='large' precision={.5} value={reviewData.average} readOnly />
+                        <p>Based on {reviewData.total} reviews</p>
+                    </div>
 
                     <div className={classes.ratingDisplay}>
-                        <div className={classes.ratingValue}>
-                            <Rating className={classes.progressRating} value={5} readOnly />
 
-                            {/* <div> */}
+                        {reviewData.data.map((item, i) => {
+                            return (
 
-                                <ThemeProvider theme={theme}>
+                                <div className={classes.ratingValue}>
+                                    <Rating className={classes.progressRating} value={item.rate} readOnly />
 
-                                    <LinearProgress style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={80} />
-                                </ThemeProvider>
-                            {/* </div> */}
+                                    {/* <div> */}
+
+                                    <ThemeProvider theme={theme}>
+
+                                        <LinearProgress style={style} color="yellow" className={classes.progressBar} variant="determinate" value={item.percentage} />
+                                    </ThemeProvider>
+                                    {/* </div> */}
 
 
-                            <span className={classes.ratingPercent}>80%</span>
-                            <span className={classes.ratingPercent}>(33)</span>
-                        </div>
-                        <div className={classes.ratingValue}>
-                            <Rating value={4} readOnly />
-                            <ThemeProvider theme={theme}>
+                                    <span className={classes.ratingPercent}>{item.percentage}%</span>
+                                    <span className={classes.ratingPercent}>({item.amount})</span>
+                                </div>
+                            )
 
-                                <LinearProgress style={style}  color="yellow" className={classes.progressBar}  variant="determinate"  value={20} />
-                            </ThemeProvider>
-                            {/* <LinearProgress color='inherit' className={classes.progressBar}  variant="determinate"  value={20} /> */}
-                            <span className={classes.ratingPercent}>20%</span>
-                            <span className={classes.ratingPercent}>(33)</span>
-                        </div>
-                        <div className={classes.ratingValue}>
-                            <Rating value={3} readOnly />
-                             <ThemeProvider theme={theme}>
-
-                                <LinearProgress style={style}  color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
-                            </ThemeProvider>
-                            <span className={classes.ratingPercent}>0%</span>
-                            <span className={classes.ratingPercent}>(0)</span>
-                        </div>
-                        <div className={classes.ratingValue}>
-                            <Rating value={2} readOnly />
-                             <ThemeProvider theme={theme}>
-
-                                <LinearProgress style={style} style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
-                            </ThemeProvider>
-                            <span className={classes.ratingPercent}>0%</span>
-                            <span className={classes.ratingPercent}>(0)</span>
-                        </div>
-                        <div className={classes.ratingValue}>
-                            <Rating value={1} readOnly />
-                             <ThemeProvider theme={theme}>
-
-                                <LinearProgress style={style} color="yellow" className={classes.progressBar}  variant="determinate"  value={0} />
-                            </ThemeProvider>
-                            <span className={classes.ratingPercent}>0%</span>
-                            <span className={classes.ratingPercent}>(0)</span>
-                        </div>
+                        })}
 
 
                     </div>
@@ -380,7 +395,7 @@ const Reviews = () => {
                 <div className={classes.button}>
                     <button onClick={(e) => { buttonClick(e) }}>{review}</button>
 
-                    <select onChange={(e)=>{changeSelection(e)}}>
+                    <select onChange={(e) => { changeSelection(e) }}>
                         <option value='recent'>Most Recent</option>
                         <option value='high'>Highest Rating</option>
                         <option value='low'>Lowest Rating</option>
@@ -410,12 +425,11 @@ const Reviews = () => {
                 <div className={classes.rating}>
 
                     <span className={classes.ratingHeader}>Rating</span>
-                    <Rating 
+                    <Rating
                         id='rating'
                         value={form.rating}
                         onChange={(e, newValue) => {
-                           changeForm(e)
-                            // setValue(newValue);
+                            changeForm(e)
                         }}
                     />
 
@@ -445,44 +459,44 @@ const Reviews = () => {
 
             <div ref={reviewsRef} className={classes.allReviews}>
 
-                {pageData.data.map((item, i)=>{
-                {/* {Arr.map((item, i)=>{ */}
+                {pageData.data.map((item, i) => {
+                    {/* {Arr.map((item, i)=>{ */ }
 
                     const reviewId = pageData.page * 5 - 5 + i + 1
                     // console.log(reviewId)
 
-                    return(
+                    return (
 
-                            <div key={i} className={classes.reviewer}>
+                        <div key={i} className={classes.reviewer}>
 
-                                <div className={classes.reviewRating}>
+                            <div className={classes.reviewRating}>
 
-                                    {/* <ReactStars {...reviewStars} /> */}
-                                    <Rating 
-                                        name={`page_${reviewId}`}
-                                        value={item.value}
-                                        precision={0.5}
-                                        readOnly 
-                                    />
-                                    <span className={classes.date}>{item.date}</span>
-                                </div>
-
-                                <div className={classes.reviewName}>
-                                    {item.verified &&
-                                        <span className={classes.verified}>Verified</span>
-                                    }
-                                    <span className={classes.name}>{item.name}</span>
-                                </div>
-
-
-                                <div className={classes.reviewDescription}>
-                                    <h2>{item.title}</h2>
-                                    <p>
-                                        {item.description}
-                                    </p>
-                                </div>
-
+                                {/* <ReactStars {...reviewStars} /> */}
+                                <Rating
+                                    name={`page_${reviewId}`}
+                                    value={item.value}
+                                    precision={0.5}
+                                    readOnly
+                                />
+                                <span className={classes.date}>{item.date}</span>
                             </div>
+
+                            <div className={classes.reviewName}>
+                                {item.verified &&
+                                    <span className={classes.verified}>Verified</span>
+                                }
+                                <span className={classes.name}>{item.name}</span>
+                            </div>
+
+
+                            <div className={classes.reviewDescription}>
+                                <h2>{item.title}</h2>
+                                <p>
+                                    {item.description}
+                                </p>
+                            </div>
+
+                        </div>
                     )
 
                 })}

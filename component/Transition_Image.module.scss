@@ -15,13 +15,13 @@
 
 .main {
   overflow: hidden;
-  padding-block: 2rem;
+  // padding-block: 2rem;
 }
 
 .banner {
-  height: 100vw;
+  height: 100vh;
   @media screen and (max-width: 790px) {
-    height: 110vh;
+    height: 50vh;
   }
   background-color: #181a1b;
   width: 100vw;
@@ -82,6 +82,7 @@
     0% {
       opacity: 0;
       width: 100%;
+      // transform: scale(1) translate(-50%, -50%);
     }
 
     5% {
@@ -89,7 +90,8 @@
     }
     100% {
       opacity: 1;
-      width: 120%;
+      width: 110%;
+      // transform: scale(1.15) translate(-50%, -50%);
     }
   }
 
@@ -97,6 +99,7 @@
     0% {
       opacity: 0;
       width: 100%;
+      // transform: scale(1) translate(-50%, -50%);
     }
 
     5% {
@@ -104,7 +107,9 @@
     }
     100% {
       opacity: 1;
-      width: 120%;
+
+      // transform: scale(1.15) translate(-50%, -50%);
+      width: 110%;
       //   @media screen and (max-width: 790px) {
       //     width: 150%;
       //   }
@@ -132,10 +137,13 @@
     }
 
     p {
-      font-size: Clamp(18px, 8vw, 25px);
+      font-size: Clamp(12px, 4vw, 25px);
       text-align: center;
       width: Min(85vw, 60ch);
       line-height: 40px;
+      @media screen and (max-height: 900px) {
+        line-height: 25px;
+      }
     }
 
     button {

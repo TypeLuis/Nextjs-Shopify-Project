@@ -1,7 +1,27 @@
 import classes from './Header.module.scss'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
+import { useEffect } from 'react'
+import { style } from '@mui/system'
 
 const Header = () => {
+
+    const router = useRouter()
+
+    const showDetailsHandler = (link) => {
+        router.push(`/${link}`)
+    }
+    useEffect(()=> {
+
+        console.log(router.pathname)
+
+    })
+    const textColor = router.pathname ==='/' ? 'White' : 'Black'
+
+    const style = {
+        'color' : textColor
+    }
+
 
 
     return (
@@ -10,24 +30,24 @@ const Header = () => {
         //         Free Shipping on All Orders Over $100
         //     </div>
         <nav className={classes.header}>
-            <ul>
+            <ul style={style}>
                 <li>
-                    <Link href='/'>Home</Link>
+                    <span onClick={()=>{showDetailsHandler('')}} >Home</span>
                 </li>
                 <li>
-                    <Link href='/Shop'>Shop</Link>
+                    <span onClick={()=>{showDetailsHandler('Shop')}}>Shop</span>
                 </li>
                 <li>
-                    <Link href='/Features'>Features</Link>
+                    <span onClick={()=>{showDetailsHandler('Features')}}>Features</span>
                 </li>
                 <li>
-                    <Link href='/About'>About</Link>
+                    <span onClick={()=>{showDetailsHandler('About')}}>About</span>
                 </li>
                 <li>
-                    <Link href='/Blog'>Blog</Link>
+                    <span onClick={()=>{showDetailsHandler('Blog')}}>Blog</span>
                 </li>
                 <li>
-                    <Link href='/Subscribe'>Subscribe</Link>
+                    <span onClick={()=>{showDetailsHandler('Subscribe')}}>Subscribe</span>
                 </li>
             </ul>
         </nav>

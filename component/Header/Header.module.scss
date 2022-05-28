@@ -1,7 +1,7 @@
 .header {
   // width: 100%;
   // position: fixed;
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
   position: absolute;
   z-index: 100;
@@ -28,10 +28,11 @@
     margin-left: 1.5rem;
   }
 
-  a {
+  span {
+    cursor: pointer;
     text-decoration: none;
     font-size: 1.5rem;
-    color: #fff;
+    // color: #fff;
     transition: all ease-in-out 0.4s;
 
     // transition: border-bottom .25s ease-in-out;
