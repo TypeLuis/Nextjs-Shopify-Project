@@ -3,10 +3,11 @@
 .main {
   text-align: center;
   background-color: #f9f9f9;
+  margin-block: 2em;
 
-  padding: 5em 0 0 0;
-
+  
   h2 {
+    padding: 2em 0 0 0;
     font-size: xx-large;
     margin: 0;
   }
@@ -28,7 +29,7 @@
       }
 
       p {
-        color: black;
+        // color: black;
         font-size: 18px;
         font-size: Clamp(0.9em, 5vw, 1.3em);
         line-height: 1.5em;
@@ -43,5 +44,10 @@
         width: 100%;
       }
     }
+  }
+
+
+  .split1.single{
+    width: Min(80%, 80ch);
   }
 }

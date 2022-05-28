@@ -2,7 +2,11 @@
   // position: absolute;
   // padding: 2rem;
   // height: Min(40vw, 400px);
+
+  cursor: pointer;
   opacity: 0;
+  
+
   transform: scale(0.96);
   transition: opacity 550ms linear, transform 400ms linear,
     left 500ms ease-in-out;
@@ -10,25 +14,28 @@
   flex-direction: column;
   grid-template-rows: min-content;
   gap: 0.5rem;
-  padding: 0.5rem;
+  // padding: 0.5rem;
   text-align: center;
   position: relative;
   // align-items: baseline;
   align-items: center;
   justify-content: center;
+  // margin: 2em auto;
 }
 
 .product__image {
-  box-shadow: 0.25px 0.25px 1px 0.25px black;
-  // height: Min(40vw, 400px);
-  // width: Min(40vw, 400px);
-
+  // box-shadow: 0.25px 0.25px 1px 0.25px black;
+  position: relative;
+  // margin:0 auto;
+  
   img {
     height: 100%;
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
+  
+  
 }
 
 .product__title {
@@ -46,4 +53,74 @@
 
 .card.slider_event.appear {
   left: 0;
+}
+
+// when the card component is in a slider
+.card.slider{
+
+}
+
+
+
+// when the card isn't a slider
+.card.single{
+  width: max-content;
+  margin: 2em auto;
+  &:hover .images::before{
+
+    animation: card calc(var(--num) * 2s) linear infinite;
+  }
+  .images{
+    position: relative;
+    // margin: 0 auto;
+    min-width: 350px;
+    min-height: 350px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: red;
+      height:2px;
+      width: 0;
+      z-index: 1;
+      
+      &:hover{
+        
+      }
+      
+    }
+
+
+
+    img{
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      transition: opacity .5s linear;
+      filter: drop-shadow(2px 2px 2px black);
+      // margin-top: calc(var(--imageNum) * 10px);
+      // aspect-ratio: 1 / 1.25;
+      // object-position: center;
+      // height:;
+      
+      &.appear{
+        opacity: 1;
+      }
+    }
+    
+    // position: absolute;
+    
+  }
+}
+
+@keyframes card {
+  0%{
+    width: 0;
+  }
+
+  100%{
+    width: 100%;
+  }
 }

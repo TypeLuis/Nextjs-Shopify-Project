@@ -8,6 +8,7 @@ import Transition_Image from '../component/Transition_Image';
 import Card from '../component/Card';
 import Main_Carousel from '../component/Main_carousel/Main_Carousel';
 import Reviews from '../component/Reviews/Reviews';
+import TextDiv from '../component/TextDiv';
 
 
 const HomePage = (props) => {
@@ -16,7 +17,7 @@ const HomePage = (props) => {
 
   const observe = (className) => {
 
-    const slider = document.getElementsByClassName('slider')
+    const sliders = document.getElementsByClassName('slider')
 
 
     const appearOptions = {
@@ -50,7 +51,11 @@ const HomePage = (props) => {
       })
     }, appearOptions)
 
-    appearOnScroll.observe(slider[0])
+    for (let slider of sliders) {
+
+      appearOnScroll.observe(slider)
+    }
+
   }
   useEffect(() => {
     observe(cardClass.appear)
@@ -67,19 +72,36 @@ const HomePage = (props) => {
 
       <Main_Carousel />
 
-      <Right />
+      <div className={`${classes.test} slider`}>
 
-      <Left />
+        {[...Array(10).keys()].map((item) => {
 
-      <Right />
+          return (
+            <>
 
-      <Left />
+              <Card slider={true} />
+            </>
+          )
+        })}
+      </div>
 
-      {/* <Card /> */}
+      <TextDiv
+
+        bgColor='black'
+
+        color='white'
+
+        textOne={{
+          'title': 'What is Lorem Ipsum?',
+          'summary': 'We combine parent-friendly features with simplicity and style to create a diaper bag system that helps with life’s messy moments. Through patent-pending design, and stylish functionality, we allow parents everywhere to tackle the chaos of parenthood with a little less mess'
+        }}
+
+      />
+
 
       <Transition_Image />
 
-      <Right />
+      {/* <Right /> */}
 
       <Card />
       <Left />
@@ -88,28 +110,31 @@ const HomePage = (props) => {
 
       <Left />
 
+      <TextDiv
+
+        bgColor='black'
+        color='white'
+        textOne={{
+          'title': 'Subscribe to save 10% on your first order!',
+          'summary': 'Get exclusive access to VIP Ayla & Co pricing.'
+        }}
+
+      />
+
+
 
       <div className={`${classes.test} slider`}>
 
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {[...Array(10).keys()].map((item) => {
+
+          return (
+            <>
+
+              <Card slider={true} />
+            </>
+          )
+        })}
       </div>
-
-      <Right />
-
-      <Left />
-
-      {/* <div className={classes.homeDisplay}>
-        <img src='https://images.unsplash.com/photo-1590992133988-6ffb251c607e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1362&q=80' />
-      </div> */}
 
 
 
@@ -128,7 +153,7 @@ export default HomePage
 
 //   const infos = await client.shop.fetchInfo(); // Fetch shop Info if you think about SEO and title and ... to your page
 
-//   const policies = await client.shop.fetchPolicies(); // fetch shop policy if you have any 
+//   const policies = await client.shop.fetchPolicies(); // fetch shop policy if you have any
 
 //   return {
 //     props: {

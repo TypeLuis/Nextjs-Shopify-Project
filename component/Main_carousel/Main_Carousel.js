@@ -255,6 +255,33 @@ const Main_Carousel = () => {
 
         window.onresize = resize
         buttonSlider(myInterval)
+
+
+
+        // Intersection 
+        // const element = document.getElementsByClassName(classes.bannerContainer)[0]
+
+
+        const appearOptions = {
+            threshold: 0,
+            rootMargin: "-50px 0px"
+        }
+
+        const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+
+
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+
+                }
+                else {
+                    console.log('whoop')
+                    entry.target.classList.add(classes.fadein)
+                }
+            })
+        }, appearOptions)
+
+        appearOnScroll.observe(containerRef.current)
     }, [])
 
 

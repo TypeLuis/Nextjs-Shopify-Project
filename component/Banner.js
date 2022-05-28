@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import classes from './Banner.module.scss'
 const Banner = (props) => {
-    useEffect(()=>{
+    useEffect(() => {
 
         const element = document.getElementsByClassName(classes.bannerContainer)[0]
 
@@ -33,20 +33,20 @@ const Banner = (props) => {
 
 
     })
-  return (
-      <div className={classes.bannerContainer}>
-          <div className={classes.imageContainer}>
+    return (
+        <div className={classes.bannerContainer}>
+            <div className={classes.imageContainer}>
 
-            <img src={props.img}></img>
+                <img src={props.img}></img>
 
-            <div className={classes.textContainer}>
+                <div className={classes.textContainer}>
 
-                <h1>{props.name}</h1>
-                <p>{props.desc}</p>
+                    <h1>{props.name}</h1>
+                    <p>{props.desc}</p>
+                </div>
             </div>
-          </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Banner
