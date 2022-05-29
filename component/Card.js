@@ -58,7 +58,7 @@ const Card = (props) => {
 
 
         const appearOptions = {
-            threshold: 0,
+            threshold: .5,
             rootMargin: "-50px 0px"
         }
 

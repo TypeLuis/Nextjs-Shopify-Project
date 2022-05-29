@@ -132,6 +132,7 @@
 }
 
 .card.tablet.single, .card.mobile.single {
+  // margin-top: 30em;
 
   .images::before{
     animation: card calc(var(--num) * 2s) linear infinite;
