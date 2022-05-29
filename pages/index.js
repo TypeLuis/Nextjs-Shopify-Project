@@ -104,6 +104,7 @@ const HomePage = (props) => {
       {/* <Right /> */}
 
       <Card />
+      <Card />
       <Left />
 
       <Right />

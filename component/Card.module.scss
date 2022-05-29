@@ -55,9 +55,21 @@
   left: 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 // when the card component is in a slider
 .card.slider{
-
+  
 }
 
 
@@ -70,6 +82,8 @@
 
     animation: card calc(var(--num) * 2s) linear infinite;
   }
+
+  
   .images{
     position: relative;
     // margin: 0 auto;
@@ -94,6 +108,8 @@
 
 
 
+
+
     img{
       position: absolute;
       right: 0;
@@ -112,6 +128,26 @@
     
     // position: absolute;
     
+  }
+}
+
+.card.tablet.single, .card.mobile.single {
+
+  .images::before{
+    animation: card calc(var(--num) * 2s) linear infinite;
+  }
+  
+
+}
+
+.card.desktop.single{
+  // background-color: red;
+  .images{
+    min-width: 500px;
+    min-height: 500px;
+    &::before{
+      background-color: blue;
+    }
   }
 }
 

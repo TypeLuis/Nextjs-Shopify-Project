@@ -1,11 +1,15 @@
 import classes from './Card.module.scss'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import ReactStars from "react-rating-stars-component";
 
 const Card = (props) => {
 
     const [imageNum, setImageNum] = useState(0)
     const [intervalId, setIntervalId] = useState(0)
+    const [deviceType, setDeviceType] = useState()
+    const cardRef = useRef(null)
+
+
 
 
     const thirdExample = {
@@ -15,9 +19,6 @@ const Card = (props) => {
         edit: false,
         value: 3.7,
         activeColor: "yellow",
-        onChange: (newValue) => {
-            console.log(`Example 3: new value is ${newValue}`);
-        }
     };
 
     const images = [
@@ -34,9 +35,26 @@ const Card = (props) => {
 
 
     useEffect(() => {
-        // setImageDisplay(images[0])
 
-        const cards = document.getElementsByClassName(classes.card)
+        // FUNCTION that checks what device type the user is using
+        const deviceTypeFunc = () => {
+            const ua = navigator.userAgent;
+            if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+                // setDeviceType('tablet')
+                return "tablet";
+            }
+            else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+                // setDeviceType('mobile')
+                return "mobile";
+            }
+            // setDeviceType('desktop')
+            return "desktop";
+        };
+
+        setDeviceType(deviceTypeFunc())
+
+
+        const card = cardRef.current
 
 
         const appearOptions = {
@@ -48,12 +66,33 @@ const Card = (props) => {
 
         const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
 
+            // console.log(entries[0])
 
-            entries.forEach(entry => {
+
+            entries.forEach((entry, index) => {
+                const entryIndex = index
                 if (!entry.isIntersecting) {
                     if (entry.target.parentNode.classList.contains('slider')) {
                         return
                     }
+
+                    switch (deviceTypeFunc()) {
+
+                        case 'tablet':
+                        case 'mobile':
+
+                            console.log('bye', intervalId)
+                            setImageNum(imageNum = 0)
+                            clearInterval(intervalId)
+
+
+                            break
+                    }
+
+                    entry.target.classList.remove(classes[deviceTypeFunc()])
+
+
+
                     if (entry.boundingClientRect.top > 0) {
                         // Element is above the viewport
                         entry.target.classList.remove(classes.appear)
@@ -62,55 +101,98 @@ const Card = (props) => {
                         // Element is below viewport
                         return
                     }
+
                 }
                 else {
+
+
                     if (entry.target.parentNode.classList.contains('slider')) {
                         // entry.target.classList.add(classes.slider_event)
                         return
                     }
+                    switch (deviceTypeFunc()) {
+
+                        case 'tablet':
+                        case 'mobile':
+                            console.log('hi')
+
+                            const newInterval = setInterval(() => {
+                                const newNum = imageNum + 1
+                                // console.log(imageNum, newNum)
+
+                                setImageNum(newNum > images.length ? imageNum = 0 : imageNum++)
+
+                            }, 2000);
+                            console.log(newInterval, entries[index], index, entryIndex, intervalId)
+                            setIntervalId(intervalId = newInterval)
+                            // appearOnScroll.unobserve(entry.target)
+
+
+                            break
+                    }
+                    // console.log(deviceType)
+                    entry.target.classList.add(classes[deviceTypeFunc()])
                     entry.target.classList.add(classes.appear)
+                    // console.log(entry.target.classList)
                 }
             })
         }, appearOptions)
-        for (let card of cards) {
-            appearOnScroll.observe(card)
-            if (card.parentNode.classList.contains('slider')) {
-                card.classList.add(classes.slider_event)
-            }
+
+        appearOnScroll.observe(card)
+        if (card.parentNode.classList.contains('slider')) {
+            card.classList.add(classes.slider_event)
         }
+
     }, [])
 
 
     const hoverFunction = () => {
 
 
-        // console.log(imageNum)
+        console.log(deviceType)
+
+        switch (deviceType) {
+            case 'desktop':
 
 
-        const newInterval = setInterval(() => {
-            const newNum = imageNum + 1
-            console.log(imageNum, newNum)
+                const newInterval = setInterval(() => {
+                    const newNum = imageNum + 1
+                    console.log(imageNum, newNum)
 
-            setImageNum(newNum > images.length ? imageNum = 0 : imageNum++)
+                    setImageNum(newNum > images.length ? imageNum = 0 : imageNum++)
 
-        }, 2000);
+                }, 2000);
 
-        setIntervalId(newInterval)
+                setIntervalId(newInterval)
+                break
+
+        }
+
 
     }
 
 
     const hoverOut = () => {
-        let h = false
 
-        // setHover(h)
-        setImageNum(0)
-        clearInterval(intervalId)
-        console.log(h)
+        switch (deviceType) {
+
+            case 'tablet':
+            case 'mobile':
+                let coco
+                break
+
+            case 'desktop':
+
+                setImageNum(0)
+                clearInterval(intervalId)
+
+                break
+
+        }
     }
 
     return (
-        <div onMouseOver={hoverFunction} onMouseOut={hoverOut} className={`${classes.card} ${!props.slider ? classes.single : classes.slider}`}>
+        <div ref={cardRef} onMouseOver={hoverFunction} onMouseOut={hoverOut} className={`${classes.card} ${!props.slider ? classes.single : classes.slider}`}>
             <div className={classes.product__image}>
                 {/* <img src='https://images.unsplash.com/photo-1648326311535-21895c185fbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80' /> */}
 
@@ -123,7 +205,7 @@ const Card = (props) => {
                     <div style={{ '--num': images.length + 1 }} className={`${classes.images}`}>
                         {images.map((item, i) => {
                             return (
-                                <img className={i === imageNum && classes.appear} style={{ '--imageNum': i + 1 }} src={item} />
+                                <img className={i === imageNum && classes.appear} src={item} />
                             )
                         })}
                     </div>
@@ -131,7 +213,7 @@ const Card = (props) => {
                 }
             </div>
             <div className={classes.product__title}>
-                Product title display
+                Product title display {deviceType}
             </div>
             <div className={classes.product_rating}>
                 <ReactStars {...thirdExample} />
