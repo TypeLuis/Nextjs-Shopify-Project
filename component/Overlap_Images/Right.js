@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import classes from './Right.module.scss'
 
-const Right = () => {
+const Right = (props) => {
     useEffect(() => {
         const fades = document.getElementsByClassName(classes.fade__in)
         const slides = document.getElementsByClassName(classes.mosaic__item)
@@ -91,11 +91,11 @@ const Right = () => {
 
             <div className={classes.mosaic}>
                 <div className={classes.mosaic__item}>
-                    <img src='https://images.unsplash.com/photo-1648295194728-cb01f46ff985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1349&q=80' />
+                    <img style={{ 'aspectRatio': props.imageOneAspect }} src='https://images.unsplash.com/photo-1648295194728-cb01f46ff985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1349&q=80' />
                 </div>
 
                 <div className={classes.mosaic__item}>
-                    <img src='https://images.unsplash.com/photo-1648289417645-f41ed721e7ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80' />
+                    <img style={{ 'maxHeight': props.imageTwoAspect ? '500px' : '300px', 'aspectRatio': props.imageTwoAspect }} src='https://images.unsplash.com/photo-1648289417645-f41ed721e7ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80' />
                 </div>
             </div>
 

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import classes from './Left.module.scss'
 
-const Left = () => {
+const Left = (props) => {
 
     useEffect(() => {
         const fades = document.getElementsByClassName(classes.fade__in)
@@ -74,11 +74,11 @@ const Left = () => {
         <div className={classes.container}>
             <div className={classes.mosaic}>
                 <div className={`${classes.mosaic__item} ${classes.img1}`}>
-                    <img src='https://images.unsplash.com/photo-1592029383200-73fb26a5b925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80' />
+                    <img style={{ 'aspectRatio': props.imageOneAspect }} src='https://images.unsplash.com/photo-1592029383200-73fb26a5b925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80' />
                 </div>
 
                 <div className={`${classes.mosaic__item} ${classes.img2}`}>
-                    <img src='https://images.unsplash.com/photo-1619457225761-a4b05403bae5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80' />
+                    <img style={{ 'aspectRatio': props.imageTwoAspect }} src='https://images.unsplash.com/photo-1619457225761-a4b05403bae5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80' />
                 </div>
             </div>
 

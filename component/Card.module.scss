@@ -87,8 +87,7 @@
   .images{
     position: relative;
     // margin: 0 auto;
-    min-width: 350px;
-    min-height: 350px;
+
 
     &::before{
       content: '';
@@ -121,7 +120,7 @@
       // object-position: center;
       // height:;
       
-      &.appear{
+      &.newImage{
         opacity: 1;
       }
     }
@@ -133,6 +132,10 @@
 
 .card.tablet.single, .card.mobile.single {
   // margin-top: 30em;
+  .images{
+        min-width: 350px;
+    min-height: 350px;
+  }
 
   .images::before{
     animation: card calc(var(--num) * 2s) linear infinite;

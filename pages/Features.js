@@ -8,14 +8,14 @@ const Features = () => {
     return (
         <div >
 
-            <Banner name={'Features'} img={'https://i.pinimg.com/originals/5f/08/58/5f085809f2b711643e4eb4974cc03c0e.gif'}  desc={'A bag built for life'}/>
+            <Banner name={'Features'} img={'https://i.pinimg.com/originals/5f/08/58/5f085809f2b711643e4eb4974cc03c0e.gif'} desc={'A bag built for life'} />
 
             <Transition_Image />
             <Right />
             <Left />
             <Right />
-            <Left />
-            <Right />
+            <Left imageOneAspect={'1.5 / 1'} imageTwoAspect={'1.5 / 1'} />
+            <Right imageOneAspect={'1.5 / 1'} imageTwoAspect={'1 / 1.5'} />
         </div>
     )
 }

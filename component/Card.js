@@ -7,6 +7,7 @@ const Card = (props) => {
     const [imageNum, setImageNum] = useState(0)
     const [intervalId, setIntervalId] = useState(0)
     const [deviceType, setDeviceType] = useState()
+    const [count, setCount] = useState(0)
     const cardRef = useRef(null)
 
 
@@ -58,8 +59,8 @@ const Card = (props) => {
 
 
         const appearOptions = {
-            threshold: .5,
-            rootMargin: "-50px 0px"
+            threshold: 0,
+            rootMargin: "-5% 0px"
         }
 
 
@@ -95,7 +96,11 @@ const Card = (props) => {
 
                     if (entry.boundingClientRect.top > 0) {
                         // Element is above the viewport
-                        entry.target.classList.remove(classes.appear)
+                        if (count < 5) {
+                            console.log(count)
+                            entry.target.classList.remove(classes.appear)
+                            setCount(count++)
+                        }
                     }
                     else {
                         // Element is below viewport
@@ -130,7 +135,6 @@ const Card = (props) => {
 
                             break
                     }
-                    // console.log(deviceType)
                     entry.target.classList.add(classes[deviceTypeFunc()])
                     entry.target.classList.add(classes.appear)
                     // console.log(entry.target.classList)
@@ -178,7 +182,6 @@ const Card = (props) => {
 
             case 'tablet':
             case 'mobile':
-                let coco
                 break
 
             case 'desktop':
@@ -205,7 +208,7 @@ const Card = (props) => {
                     <div style={{ '--num': images.length + 1 }} className={`${classes.images}`}>
                         {images.map((item, i) => {
                             return (
-                                <img className={i === imageNum && classes.appear} src={item} />
+                                <img className={i === imageNum && classes.newImage} src={item} />
                             )
                         })}
                     </div>

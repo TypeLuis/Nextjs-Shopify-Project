@@ -56,8 +56,8 @@ $img-position-media2: Min($position-vw-media2, 90px);
       height: $img-height-media;
       width: $img-height-media;
       img {
-        width: $img-height-media;
-        height: $img-height-media;
+        max-width: $img-height-media;
+        max-height: $img-height-media;
       }
 
       .mosaic__item:first-of-type {
@@ -154,8 +154,8 @@ $img-position-media2: Min($position-vw-media2, 90px);
   //   margin: 0 2em;
 
   img {
-    width: $img-height;
-    height: $img-height;
+    max-width: $img-height;
+    max-height: $img-height;
     aspect-ratio: 1/ 1;
     object-fit: cover;
     box-shadow: 2px 2px 5px 0.1px rgb(122, 122, 122);

@@ -39,7 +39,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     padding: 0;
     .mosaic__description {
       margin-top: $img-position-media2;
-
+      
       left: 15%;
       p {
         width: Min(75vw, 60ch);
@@ -48,12 +48,14 @@ $img-position-media2: Min($position-vw-media2, 90px);
     }
     .mosaic {
       //   left: Min(5vw, 32.5px);
+      margin-top: $img-position-media2;
       left: 7%;
       width: $img-height-media;
       height: $img-height-media;
       img {
-        width: $img-height-media;
-        height: $img-height-media;
+
+        max-width: $img-height-media;
+        max-height: $img-height-media;
       }
 
       .mosaic__item:first-of-type {
@@ -147,10 +149,14 @@ $img-position-media2: Min($position-vw-media2, 90px);
   display: flex;
   justify-content: center;
   align-items: center;
-
+  // width: $img-height;
+  // height: $img-height;
+  
   img {
-    width: $img-height;
-    height: $img-height;
+    max-width: $img-height;
+    max-height: $img-height;
+    // width: 100%;
+    // height: 100%;
     aspect-ratio: 1/ 1;
     object-fit: cover;
     box-shadow: 2px 2px 5px 0.1px rgb(122, 122, 122);
@@ -162,6 +168,11 @@ $img-position-media2: Min($position-vw-media2, 90px);
     top: $img-position;
     opacity: 0;
     transition: left 500ms ease-in-out, opacity 500ms ease-in;
+
+    img{
+      // max-height: 500px;
+      // aspect-ratio: 1.5 / 1;
+    }
   }
 
   .mosaic__item.appear:first-of-type {
@@ -174,6 +185,12 @@ $img-position-media2: Min($position-vw-media2, 90px);
     opacity: 0;
     left: 15%;
     transition: left 500ms ease-in-out, opacity 500ms ease-in;
+
+    img{
+      // max-height: 500px;
+      // height: 500px;
+      // aspect-ratio: 1 / 1.5;
+    }
   }
   .mosaic__item.appear:last-of-type {
     position: relative;
