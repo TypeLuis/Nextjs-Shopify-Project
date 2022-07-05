@@ -174,13 +174,10 @@ const Reviews = () => {
     const getRatingData = (array) => {
 
         const list = []
-        let total = 0
 
         for (let num of [1, 2, 3, 4, 5]) {
 
             const totalTally = array.filter(x => x.value === num).length
-
-            total += totalTally
 
             const percentage = Math.round((totalTally / array.length) * 100)
 
@@ -192,12 +189,12 @@ const Reviews = () => {
             })
         }
 
-        const average = total / list.length;
+        const average = array.length / list.length;
 
-        console.log(total, array.length)
+        console.log(array.length, average)
 
         return {
-            'total': total,
+            'total': array.length,
             'average': average,
             'data': list.reverse()
         }
@@ -240,10 +237,6 @@ const Reviews = () => {
         setForm(formCopy)
 
     }
-
-
-
-
 
 
 

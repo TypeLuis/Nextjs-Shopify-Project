@@ -115,6 +115,8 @@ const Card = (props) => {
                         // entry.target.classList.add(classes.slider_event)
                         return
                     }
+
+                    // if the deviceType is mobile or tablet
                     switch (deviceTypeFunc()) {
 
                         case 'tablet':
@@ -150,8 +152,9 @@ const Card = (props) => {
     }, [])
 
 
-    const hoverFunction = () => {
+    const hoverFunction = (e) => {
 
+        if (props.slider) return
 
         console.log(deviceType)
 
@@ -176,7 +179,10 @@ const Card = (props) => {
     }
 
 
-    const hoverOut = () => {
+    const hoverOut = (e) => {
+
+
+        if (props.slider) return
 
         switch (deviceType) {
 

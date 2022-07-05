@@ -19,6 +19,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
   top: 20px;
   opacity: 0;
   transition: $speed ease-in;
+
   &.appear {
     top: 0;
     opacity: 1;
@@ -31,30 +32,37 @@ $img-position-media2: Min($position-vw-media2, 90px);
   justify-content: center;
   margin: 140px auto;
   position: relative;
+
   @media screen and (min-width: 791px) {
     // left: 4%;
   }
+
   //   padding-inline-end: 15px;
   width: 80vw;
+
   @media screen and (max-width: 790px) {
     flex-direction: column;
     margin: $img-position-media 0;
     // margin: 0;
     padding: 0;
+
     .mosaic__description {
       margin-top: $img-position-media2;
       //   top: Min(15vw, 100px);
 
       left: 15%;
+
       p {
         width: Min(75vw, 60ch);
         font-size: Clamp(12px, 6vw, 18px);
       }
     }
+
     .mosaic {
       left: 7%;
       height: $img-height-media;
       width: $img-height-media;
+
       img {
         max-width: $img-height-media;
         max-height: $img-height-media;
@@ -63,6 +71,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
       .mosaic__item:first-of-type {
         top: $img-position-media;
       }
+
       .mosaic__item.appear:first-of-type {
         left: $img-position-media;
       }
@@ -72,10 +81,12 @@ $img-position-media2: Min($position-vw-media2, 90px);
 
 .mosaic__description {
   position: relative;
+
   @media screen and (min-width: 791px) {
     margin-left: $img-position;
     top: 20px;
   }
+
   display: flex;
   justify-content: center;
   text-align: center;
@@ -86,6 +97,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     font-weight: 600;
     margin: 5px;
   }
+
   p {
     position: relative;
     width: Min(40vw, 40ch);
@@ -93,6 +105,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     font-weight: 400;
     line-height: 30px;
   }
+
   button {
     width: Min(95%, 250px);
     height: 54px;
@@ -131,6 +144,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     &:hover::before {
       left: 80%;
     }
+
     &:hover::after {
       right: 80%;
     }
@@ -175,6 +189,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     left: $img-position;
     opacity: 1;
   }
+
   .mosaic__item:last-of-type {
     z-index: -1;
     position: relative;
@@ -182,6 +197,7 @@ $img-position-media2: Min($position-vw-media2, 90px);
     opacity: 0;
     transition: left 500ms ease-in-out, opacity 500ms ease-in;
   }
+
   .mosaic__item.appear:last-of-type {
     position: relative;
     left: 0;
