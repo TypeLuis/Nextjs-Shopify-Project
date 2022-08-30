@@ -46,7 +46,7 @@ const Header = () => {
                     <div className={classes.dropdownContent}>
                         <span onClick={() => { navigatorDropdown('Shop', 'bag') }}>Bag</span>
 
-                        <span onClick={() => { navigatorDropdown('Shop', 'vacuum') }}>Vacuum</span>
+                        <span onClick={() => { navigatorDropdown('Shop', 'vaccum') }}>Vaccum</span>
 
                         <span onClick={() => { navigatorDropdown('Shop', 'console') }}>Console</span>
 

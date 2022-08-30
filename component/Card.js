@@ -18,11 +18,11 @@ const Card = (props) => {
         count: 5,
         isHalf: true,
         edit: false,
-        value: 3.7,
+        value: props.rating ? props.rating : 3.7,
         activeColor: "yellow",
     };
 
-    const images = [
+    const images = props.images ? props.images : [
         'https://images.unsplash.com/photo-1653744018861-72293010037b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1438&q=80',
 
         'https://images.unsplash.com/photo-1653677204619-241774d281ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
@@ -222,14 +222,14 @@ const Card = (props) => {
                 }
             </div>
             <div className={classes.product__title}>
-                Product title display {deviceType}
+                {props.name ? props.name : 'Product title display'}
             </div>
             <div className={classes.product_rating}>
                 <ReactStars {...thirdExample} />
             </div>
             <div className={classes.product__price}>
                 <span>
-                    $74.00
+                    ${props.price ? props.price : 74}
                 </span>
             </div>
 
