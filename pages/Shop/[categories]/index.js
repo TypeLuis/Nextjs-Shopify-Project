@@ -2,6 +2,13 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Banner from '../../../component/Banner';
 
+
+const dummyData = {
+    'categories': {
+
+    }
+}
+
 const Category = () => {
     const router = useRouter();
     console.log(router)
