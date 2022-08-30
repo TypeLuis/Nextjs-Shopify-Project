@@ -44,13 +44,13 @@ const Header = () => {
                     <span onClick={() => { navigator('Shop') }}>Shop</span>
 
                     <div className={classes.dropdownContent}>
-                        <span onClick={() => { navigatorDropdown('Shop', 'Bag') }}>Bag</span>
+                        <span onClick={() => { navigatorDropdown('Shop', 'bag') }}>Bag</span>
 
-                        <span onClick={() => { navigatorDropdown('Shop', 'Vacuum') }}>Vacuum</span>
+                        <span onClick={() => { navigatorDropdown('Shop', 'vacuum') }}>Vacuum</span>
 
-                        <span onClick={() => { navigatorDropdown('Shop', 'Console') }}>Console</span>
+                        <span onClick={() => { navigatorDropdown('Shop', 'console') }}>Console</span>
 
-                        <span onClick={() => { navigatorDropdown('Shop', 'Games') }}>Games</span>
+                        <span onClick={() => { navigatorDropdown('Shop', 'games') }}>Games</span>
                     </div>
                 </li>
                 <li>
