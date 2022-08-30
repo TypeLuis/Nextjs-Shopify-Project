@@ -1,4 +1,4 @@
-import  Footer  from '../component/Footer/Footer'
+import Footer from '../component/Footer/Footer'
 import Header from '../component/Header/Header'
 import HeaderSmall from '../component/Header/HeaderSmall'
 import '../styles/globals.css'
@@ -9,7 +9,11 @@ function MyApp({ Component, pageProps }) {
       <Header />
       <HeaderSmall />
       <Component {...pageProps} />
+
+      {/* <div className='Footer'> */}
+
       <Footer />
+      {/* </div> */}
     </>
   )
 }

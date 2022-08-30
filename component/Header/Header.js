@@ -1,25 +1,31 @@
 import classes from './Header.module.scss'
 import Link from 'next/link'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { style } from '@mui/system'
+// import { style } from '@mui/system'
 
 const Header = () => {
 
     const router = useRouter()
 
-    const showDetailsHandler = (link) => {
+    const navigator = (link) => {
         router.push(`/${link}`)
     }
-    useEffect(()=> {
+
+    const navigatorDropdown = (main, link) => {
+        router.push(`/${main}/${link}`)
+        // router.push(`/${main}/${link}`)
+    }
+
+    useEffect(() => {
 
         console.log(router.pathname)
 
     })
-    const textColor = router.pathname ==='/' ? 'White' : 'Black'
+    const textColor = router.pathname === '/' ? 'White' : 'Black'
 
     const style = {
-        'color' : textColor
+        'color': textColor
     }
 
 
@@ -32,22 +38,32 @@ const Header = () => {
         <nav className={classes.header}>
             <ul style={style}>
                 <li>
-                    <span onClick={()=>{showDetailsHandler('')}} >Home</span>
+                    <span onClick={() => { navigator('') }} >Home</span>
+                </li>
+                <li className={classes.dropdown}>
+                    <span onClick={() => { navigator('Shop') }}>Shop</span>
+
+                    <div className={classes.dropdownContent}>
+                        <span onClick={() => { navigatorDropdown('Shop', 'Bag') }}>Bag</span>
+
+                        <span onClick={() => { navigatorDropdown('Shop', 'Vacuum') }}>Vacuum</span>
+
+                        <span onClick={() => { navigatorDropdown('Shop', 'Console') }}>Console</span>
+
+                        <span onClick={() => { navigatorDropdown('Shop', 'Games') }}>Games</span>
+                    </div>
                 </li>
                 <li>
-                    <span onClick={()=>{showDetailsHandler('Shop')}}>Shop</span>
+                    <span onClick={() => { navigator('Features') }}>Features</span>
                 </li>
                 <li>
-                    <span onClick={()=>{showDetailsHandler('Features')}}>Features</span>
+                    <span onClick={() => { navigator('About') }}>About</span>
                 </li>
                 <li>
-                    <span onClick={()=>{showDetailsHandler('About')}}>About</span>
+                    <span onClick={() => { navigator('Blog') }}>Blog</span>
                 </li>
                 <li>
-                    <span onClick={()=>{showDetailsHandler('Blog')}}>Blog</span>
-                </li>
-                <li>
-                    <span onClick={()=>{showDetailsHandler('Subscribe')}}>Subscribe</span>
+                    <span onClick={() => { navigator('Subscribe') }}>Subscribe</span>
                 </li>
             </ul>
         </nav>
