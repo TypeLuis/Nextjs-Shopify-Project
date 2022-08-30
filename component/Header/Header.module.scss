@@ -78,11 +78,18 @@
     /* Important for vertical align on mobile phones */
   }
 
+  // transition: display ease-in-out 1s;
+  transition-delay: visibility 1s,
+  opacity 1s;
+
   .dropdownContent {
-    display: none;
-    transition: display ease-in-out 1s;
+    // display: none;
     position: absolute;
     overflow: visible;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity 0.5s ease-in-out;
+    // transition-property: visibility, opacity;
 
     background-color: #f9f9f9;
     min-width: 160px;
@@ -110,7 +117,9 @@
 
 
   &:hover .dropdownContent {
-    display: block;
+    // display: block;
+    visibility: visible;
+    opacity: 1;
   }
 }
 
