@@ -1,11 +1,13 @@
 $height: 60px;
 $width: 60px;
+
 .icons {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
   z-index: 100;
+
   ul {
     display: flex;
     list-style: none;
@@ -16,8 +18,11 @@ $width: 60px;
       align-items: center;
       font-size: $height / 2;
       line-height: $height;
-      color: #666;
+      // color: #666;
+      color: black;
+
     }
+
     li {
       // font-size: 3em;
       // display: block;
@@ -26,7 +31,9 @@ $width: 60px;
       align-items: center;
       height: $height;
       width: $width;
-      background-color: #171515;
+      // background-color: #171515;
+      background-color: white;
+      border: 3px dotted black;
       border-radius: 50%;
       margin: 5px 15px;
       cursor: pointer;
@@ -65,6 +72,7 @@ $width: 60px;
       &:nth-child(1):hover i {
         transform: scale(1.2);
       }
+
       &:nth-child(2):hover i {
         transform: scale(1.2);
       }
@@ -76,6 +84,7 @@ $width: 60px;
         transform: scale(1.2);
       }
     }
+
     i {
       margin-top: 5px;
       transition: 500ms linear;
