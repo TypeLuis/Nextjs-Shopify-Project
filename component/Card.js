@@ -73,7 +73,7 @@ const Card = (props) => {
             entries.forEach((entry, index) => {
                 const entryIndex = index
                 if (!entry.isIntersecting) {
-                    if (entry.target.parentNode.classList.contains('slider')) {
+                    if (entry.target.parentNode?.classList.contains('slider')) {
                         return
                     }
 
