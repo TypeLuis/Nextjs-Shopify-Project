@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Banner from '../../../component/Banner';
 import Card from '../../../component/Card';
-
+import classes from './category.module.scss'
 
 const dummyData = {
     'categories': ['bag', 'vaccum', 'console', 'games'],
