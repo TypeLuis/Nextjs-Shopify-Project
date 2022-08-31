@@ -8,7 +8,7 @@ import plus from './icon-plus.svg'
 import cart from './icon-cart.svg'
 
 
-const ProductPage = () => {
+const ProductPage = (props) => {
     const images = [
         'https://images.unsplash.com/photo-1649516602438-7be2b1878dab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
 
@@ -40,8 +40,27 @@ const ProductPage = () => {
     })
     return (
         <div className={classes.content}>
-            <ImageBox images={images}></ImageBox>
-            <Product ></Product>
+            <ImageBox
+
+                images={props.images ? props.images : images}
+
+            ></ImageBox>
+
+
+            <Product
+                desc={props.desc ? props.desc : `These low-profile sneakers are your perfect casual wear companion.
+                Featuring a durable rubber outer sole, they'll withstand everything
+                the weather can offer.`}
+
+                category={props.category ? props.category : 'sneaker company'}
+
+                name={props.name ? props.name : 'Fall Limited Edition Sneakers'}
+
+                originalPrice={props.originalPrice ? props.originalPrice : 250}
+
+                discountPrice={props.discountPrice ? props.discountPrice : 125}
+
+            ></Product>
         </div>
     )
 }
@@ -256,30 +275,28 @@ const ImageBox = (props) => {
 }
 
 
-const Product = () => {
+const Product = (props) => {
     const [counter, setCounter] = useState(1)
 
 
     return (
         <section className={classes.product}>
 
-            <div className={classes.company_name}>sneaker company</div>
-            <div className={classes.title}>Fall Limited Edition Sneakers</div>
+            <div className={classes.company_name}>{props.category}</div>
+            <div className={classes.title}>{props.name}</div>
 
             <div className={classes.description}>
-                These low-profile sneakers are your perfect casual wear companion.
-                Featuring a durable rubber outer sole, they'll withstand everything
-                the weather can offer.
+                {props.desc}
             </div>
 
             <div className={classes.price_wrapper}>
 
                 <div className={classes.group}>
-                    <div className={classes.price}>$125.00</div>
+                    <div className={classes.price}>${props.discountPrice}.00</div>
                     <div className={classes.discount}>50%</div>
                 </div>
 
-                <div className={classes.old_price}>$250.00</div>
+                <div className={classes.old_price}>${props.originalPrice}.00</div>
             </div>
 
             <div className={classes.count_btn_group}>
