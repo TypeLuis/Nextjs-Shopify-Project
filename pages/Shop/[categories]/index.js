@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Banner from '../../../component/Banner';
 import Card from '../../../component/Card';
@@ -80,7 +80,10 @@ const Category = () => {
 
     const name = router.query.categories
 
-    console.log(router)
+    useEffect(() => {
+        console.log(process.env.SITE)
+
+    }, [])
     return (
         <>
 
@@ -92,9 +95,9 @@ const Category = () => {
                     {dummyData[name].products?.map((item, i) => {
 
                         return (
-                            <>
+                            <div key={i}>
                                 <Card name={item.name} images={item.images} rating={item.rating} price={item.price} />
-                            </>
+                            </div>
                         )
                     })}
 
