@@ -68,6 +68,22 @@ const dummyData = {
                 'rating': 4,
                 'price': 300
             },
+
+            {
+                'name': 'PS3',
+                'images': [
+                    'https://images.unsplash.com/photo-1526510096283-b0b3b6cac327?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+
+                    'https://images.unsplash.com/photo-1526509867162-5b0c0d1b4b33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+
+                    'https://images.unsplash.com/photo-1661276503896-aa8b017f8914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+
+                    'https://images.unsplash.com/photo-1654557515995-74507873a12d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
+
+                ],
+                'rating': 4.2,
+                'price': 100
+            },
         ]
     },
     'games': {
@@ -94,17 +110,17 @@ const Category = () => {
 
                     <div className={classes.grid}>
 
+
+                        {dummyData[name].products?.map((item, i) => {
+
+                            return (
+                                <div key={i}>
+                                    <Card name={item.name} images={item.images} rating={item.rating} price={item.price} />
+                                </div>
+                            )
+                        })}
+
                     </div>
-
-                    {dummyData[name].products?.map((item, i) => {
-
-                        return (
-                            <div key={i}>
-                                <Card name={item.name} images={item.images} rating={item.rating} price={item.price} />
-                            </div>
-                        )
-                    })}
-
 
                 </>
 
