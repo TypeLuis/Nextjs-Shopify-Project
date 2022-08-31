@@ -1,7 +1,3 @@
-@function css-max($values... ) {
-    @return css-function(max, $values );
-}
-
 $maxGrid : 3;
 
 .grid {
