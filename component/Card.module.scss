@@ -149,6 +149,25 @@
 .card.desktop {
   border: 1px solid black;
   border-radius: 0 0 20% 20%;
+  // overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 60%;
+    border-radius: 40%;
+    background: aqua;
+    z-index: 10000;
+    animation: fill 7s ease-in-out;
+
+    &:hover {}
+  }
+
+  &::before:hover {}
+
+
 }
 
 .card.desktop.single {
@@ -164,7 +183,21 @@
   }
 }
 
+// clip-path: polygon(0 39%, 13% 43%, 22% 48%, 34% 52%, 46% 59%, 61% 62%, 73% 63%, 89% 59%, 100% 55%, 100% 100%, 0 100%);
 
+// clip-path: polygon(0 55%, 11% 56%, 22% 59%, 37% 64%, 52% 62%, 62% 52%, 76% 47%, 88% 46%, 100% 40%, 100% 100%, 0 100%);
+
+@keyframes fill {
+
+  0%,
+  100% {
+    clip-path: polygon(0 39%, 13% 43%, 22% 48%, 34% 52%, 46% 59%, 61% 62%, 73% 63%, 89% 59%, 100% 55%, 100% 100%, 0 100%);
+  }
+
+  50% {
+    clip-path: polygon(0 55%, 11% 56%, 22% 59%, 37% 64%, 52% 62%, 62% 52%, 76% 47%, 88% 46%, 100% 40%, 100% 100%, 0 100%);
+  }
+}
 
 @keyframes card {
   0% {
