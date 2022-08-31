@@ -92,6 +92,10 @@ const Category = () => {
                 <>
                     <Banner name={name} img={dummyData[name].image} />
 
+                    <div className={classes.grid}>
+
+                    </div>
+
                     {dummyData[name].products?.map((item, i) => {
 
                         return (
