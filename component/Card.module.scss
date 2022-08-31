@@ -5,7 +5,7 @@
 
   cursor: pointer;
   opacity: 0;
-  
+
 
   transform: scale(0.96);
   transition: opacity 550ms linear, transform 400ms linear,
@@ -21,21 +21,24 @@
   align-items: center;
   justify-content: center;
   // margin: 2em auto;
+
+
+
 }
 
 .product__image {
   // box-shadow: 0.25px 0.25px 1px 0.25px black;
   position: relative;
   // margin:0 auto;
-  
+
   img {
     height: 100%;
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
-  
-  
+
+
 }
 
 .product__title {
@@ -68,48 +71,45 @@
 
 
 // when the card component is in a slider
-.card.slider{
-  
-}
+.card.slider {}
 
 
 
 // when the card isn't a slider
-.card.single{
+.card.single {
   width: max-content;
   margin: 2em auto;
-  &:hover .images::before{
+
+  &:hover .images::before {
 
     animation: card calc(var(--num) * 2s) linear infinite;
   }
 
-  
-  .images{
+
+  .images {
     position: relative;
     // margin: 0 auto;
 
 
-    &::before{
+    &::before {
       content: '';
       position: absolute;
       bottom: 0;
       left: 0;
       background-color: red;
-      height:2px;
+      height: 2px;
       width: 0;
       z-index: 1;
-      
-      &:hover{
-        
-      }
-      
+
+      &:hover {}
+
     }
 
 
 
 
 
-    img{
+    img {
       position: absolute;
       right: 0;
       opacity: 0;
@@ -119,48 +119,59 @@
       // aspect-ratio: 1 / 1.25;
       // object-position: center;
       // height:;
-      
-      &.newImage{
+
+      &.newImage {
         opacity: 1;
       }
     }
-    
+
     // position: absolute;
-    
+
   }
 }
 
-.card.tablet.single, .card.mobile.single {
+.card.tablet.single,
+.card.mobile.single {
+
   // margin-top: 30em;
-  .images{
-        min-width: 350px;
+  .images {
+    min-width: 350px;
     min-height: 350px;
   }
 
-  .images::before{
+  .images::before {
     animation: card calc(var(--num) * 2s) linear infinite;
   }
-  
+
 
 }
 
-.card.desktop.single{
+.card.desktop {
+  border: 1px solid black;
+  border-radius: 0 0 20% 20%;
+}
+
+.card.desktop.single {
+
   // background-color: red;
-  .images{
+  .images {
     min-width: 500px;
     min-height: 500px;
-    &::before{
+
+    &::before {
       background-color: blue;
     }
   }
 }
 
+
+
 @keyframes card {
-  0%{
+  0% {
     width: 0;
   }
 
-  100%{
+  100% {
     width: 100%;
   }
 }

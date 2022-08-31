@@ -6,4 +6,24 @@ $maxGrid : 3;
     // AutoFills columns, max out at 3
     // use #{$variable} syntax in calc function to use variable
     grid-template-columns: repeat(auto-fill, minmax(Max(500px, calc(100% / #{$maxGrid})), 1fr));
+
+    // & {
+    //     border: 1px solid black;
+    //     background-color: aqua;
+    // }
 }
+
+@media screen and (max-width: 500px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(Max(300px, calc(100% / #{$maxGrid})), 1fr));
+    }
+}
+
+.grid.dektop {
+    background-color: blue;
+}
+
+// .drip {
+//     background-color: aqua;
+//     border: 1px solid black;
+// }

@@ -114,7 +114,7 @@ const Category = () => {
                         {dummyData[name].products?.map((item, i) => {
 
                             return (
-                                <div key={i}>
+                                <div className={classes.drip} key={i}>
                                     <Card name={item.name} images={item.images} rating={item.rating} price={item.price} />
                                 </div>
                             )
