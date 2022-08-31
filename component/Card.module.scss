@@ -163,27 +163,46 @@
   // position: relative;
   // overflow: hidden;
 
+  &:hover .product__info {
+    top: 50%;
+  }
+
+  &:hover .product__info::before {
+    animation: fill .5s linear infinite;
+  }
+
+  .images {
+    z-index: 1;
+  }
+
   .product__info {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 22px);
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: #00aeff;
-    transition: 1s;
+    transition: 5s;
 
     &:before {
       content: '';
       position: absolute;
-      height: 90px;
-      width: 100%;
-      top: -90px;
+      top: -22px;
       left: 0;
-      background: url('../asset/wave.svg');
-      background-repeat: no-repeat;
-      background-size: 100%;
-      z-index: 10000;
-      animation: fill .5s linear infinite;
+      width: 100%;
+      height: 22px;
+      background: url('../asset/wave.png');
+      // background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1000;
+
     }
+
+    &:hover::before {
+      // height: 500px;
+      // animation: fill .5s linear infinite;
+    }
+
   }
 
 
@@ -211,12 +230,12 @@
 
   0% {
     background-position-x: 0;
-    // background-position-y: -10%;
+    background-position-y: -22px;
   }
 
   100% {
     background-position-x: 118px;
-    // background-position-y: -10%;
+    background-position-y: -22px;
   }
 }
 
