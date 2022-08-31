@@ -221,6 +221,10 @@ const Card = (props) => {
 
                 }
             </div>
+
+            <div className={classes.product__info}>
+
+            </div>
             <div className={classes.product__title}>
                 {props.name ? props.name : 'Product title display'}
             </div>
@@ -232,8 +236,8 @@ const Card = (props) => {
                     ${props.price ? props.price : 74}
                 </span>
             </div>
-
         </div>
+
     )
 }
 
