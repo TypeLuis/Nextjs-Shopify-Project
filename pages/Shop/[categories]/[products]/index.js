@@ -136,21 +136,32 @@ export const getStaticPaths = async () => {
             'image': 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=647&q=80'
         }
     }
-    const categoryPaths = dummyData.categories.map((item, i) => {
-        // console.log(dummyData[item].products && dummyData[item].products)
-        let map
-        if (dummyData[item].products) {
-            map = dummyData[item].products.map((item, i) => {
-                // console.log(item.name)
-                return item.name
+    const categoryPaths = dummyData.categories.map(category => {
+        let products
+        if (dummyData[category].products) {
+            products = dummyData[category].products
+        }
+        else {
+            products = ['test', 'testAgain']
+        }
+        return (
+
+            products.map(product => {
+                return {
+                    'params': {
+                        'categories': category,
+                        'products': product.name ? product.name : product
+                    }
+                }
             })
-        }
-        // console.log(map)
-        return {
-            // 'categories' key has to be the same name as dynamic file name
-            params: { 'categories': item }
-        }
-    })
+        )
+    }).flat()
+
+    // const test = dummyData.categories.map((item, i) => {
+
+    // })
+
+    console.log(categoryPaths)
 
     return {
         'paths': categoryPaths,
@@ -248,13 +259,20 @@ export const getStaticProps = async (context) => {
         }
     }
 
+
     const categoryContext = context.params.categories
+    const productContext = context.params.products
+
+    const product = dummyData[categoryContext].products.filter(item => item.name === productContext)[0]
     const category = dummyData[categoryContext]
+
+    console.log(product)
 
     return {
         'props': {
             'categories': dummyData.categories,
-            'category': category
+            category,
+            product
         },
     }
 }
