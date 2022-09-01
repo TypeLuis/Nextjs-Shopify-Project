@@ -260,7 +260,23 @@ export const getStaticProps = async (context) => {
     const categoryContext = context.params.categories
     const productContext = context.params.products
 
-    const product = dummyData[categoryContext].products.filter(item => item.name === productContext)[0]
+    let product
+
+    if (dummyData[categoryContext].products) {
+
+        product = dummyData[categoryContext].products.filter(item => item.name === productContext)[0]
+    } else {
+        product = {
+            'name': 'Test Tittle',
+            'images': [
+                'https://images.unsplash.com/photo-1535139262971-c51845709a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+
+                'https://images.unsplash.com/photo-1532236395709-7d70320fec2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1802&q=80',
+
+                'https://images.unsplash.com/photo-1597531922242-823dbfca45bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=844&q=80'
+            ]
+        }
+    }
     const category = dummyData[categoryContext]
 
     console.log(product)
