@@ -20,7 +20,7 @@ const Category = (props) => {
     return (
         <>
 
-            {props.categories.includes(router.query.categories) ?
+            {props.categories.includes(router.query.categories) &&
 
                 <>
                     <Banner name={name} img={props.category.image} />
@@ -46,13 +46,6 @@ const Category = (props) => {
                     </div>
 
                 </>
-
-
-
-
-                :
-
-                <div>not Found</div>
 
 
             }
