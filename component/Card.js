@@ -222,19 +222,23 @@ const Card = (props) => {
                 }
             </div>
 
-            <div className={classes.product__info}>
+            <div className={classes.product__wave}>
 
             </div>
-            <div className={classes.product__title}>
-                {props.name ? props.name : 'Product title display'}
-            </div>
-            <div className={classes.product_rating}>
-                <ReactStars {...thirdExample} />
-            </div>
-            <div className={classes.product__price}>
-                <span>
-                    ${props.price ? props.price : 74}
-                </span>
+
+            <div className={classes.product__info}>
+
+                <div className={classes.product__title}>
+                    {props.name ? props.name : 'Product title display'}
+                </div>
+                <div className={classes.product_rating}>
+                    <ReactStars {...thirdExample} />
+                </div>
+                <div className={classes.product__price}>
+                    <span>
+                        ${props.price ? props.price : 74}
+                    </span>
+                </div>
             </div>
         </div>
 

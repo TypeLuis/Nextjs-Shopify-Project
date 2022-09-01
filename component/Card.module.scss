@@ -8,6 +8,7 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 
 .card {
   // position: absolute;
@@ -37,6 +38,11 @@
 
 }
 
+.product__info {
+  display: flex;
+  flex-direction: column;
+}
+
 .product__image {
   // box-shadow: 0.25px 0.25px 1px 0.25px black;
   position: relative;
@@ -54,6 +60,9 @@
 
 .product__title {
   width: 100%;
+  font-weight: 600;
+  font-size: x-large;
+  font-family: 'Merriweather', serif;
 }
 
 .card.appear {
@@ -159,14 +168,14 @@
 
 .card.desktop {
   border: 1px solid black;
-  // border-radius: 0 0 20% 20%;
+  border-radius: 0 0 20% 20%;
   overflow: hidden;
 
-  &:hover .product__info {
-    top: 88%;
+  &:hover .product__wave {
+    top: 90%;
   }
 
-  &:hover .product__info::before {
+  &:hover .product__wave::before {
     // animation: fill .5s linear infinite;
   }
 
@@ -175,7 +184,7 @@
     background-color: white;
   }
 
-  .product__info {
+  .product__wave {
     position: absolute;
     top: calc(100% + 22px);
     left: 0;
