@@ -274,7 +274,9 @@ export const getStaticProps = async (context) => {
                 'https://images.unsplash.com/photo-1532236395709-7d70320fec2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1802&q=80',
 
                 'https://images.unsplash.com/photo-1597531922242-823dbfca45bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=844&q=80'
-            ]
+            ],
+            'rating': 3.5,
+            'price': 600
         }
     }
     const category = dummyData[categoryContext]

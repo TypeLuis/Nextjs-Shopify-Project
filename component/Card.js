@@ -15,7 +15,7 @@ const Card = (props) => {
     const router = useRouter()
 
     const handleClick = () => {
-        router.push(`${props.catregory ? props.catregory : 'console'}/${props.name ? props.name : 'console'}`)
+        router.push(`${props.category ? props.category : 'console'}/${props.name ? props.name : 'console'}`)
     }
 
 
