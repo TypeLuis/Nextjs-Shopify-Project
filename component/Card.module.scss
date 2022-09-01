@@ -40,11 +40,35 @@
 
 .product__info {
   display: flex;
+  height: 100px;
   flex-direction: column;
-  align-items: baseline;
-  justify-content: baseline;
+  align-items: center;
+  // align-self: flex-start;
+  width: max-content;
   z-index: 10;
-  // align-items: flex-start;
+  gap: 1em;
+
+  .info__flex {
+    display: flex;
+    gap: 2em;
+  }
+
+  .info__flex2 {
+    display: flex;
+    gap: 2em;
+  }
+
+  .product__title {
+    // width: min-content;
+    // display: flex;
+    // align-items: flex-start;
+    position: relative;
+    top: 15%;
+    font-weight: 300;
+    color: rgb(80, 80, 80);
+    font-size: x-large;
+    font-family: 'Merriweather', serif;
+  }
 }
 
 .product__image {
@@ -62,13 +86,7 @@
 
 }
 
-.product__title {
-  width: 100%;
-  font-weight: 300;
-  color: rgb(80, 80, 80);
-  font-size: x-large;
-  font-family: 'Merriweather', serif;
-}
+
 
 .card.appear {
   opacity: 1;

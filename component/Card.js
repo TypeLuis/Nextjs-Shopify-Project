@@ -228,16 +228,23 @@ const Card = (props) => {
 
             <div className={classes.product__info}>
 
-                <div className={classes.product__title}>
-                    {props.name ? props.name : 'Product title display'}
+                <div className={classes.info__flex}>
+
+                    <div className={classes.product__title}>
+                        {props.name ? props.name : 'Product title display'}
+                    </div>
+                    <div className={classes.product_rating}>
+                        <ReactStars {...thirdExample} />
+                    </div>
                 </div>
-                <div className={classes.product_rating}>
-                    <ReactStars {...thirdExample} />
-                </div>
-                <div className={classes.product__price}>
-                    <span>
+                <div className={classes.info__flex2}>
+
+                    <div className={classes.product__price}>
                         ${props.price ? props.price : 74}
-                    </span>
+                    </div>
+                    <div>
+                        Based on {props.reviewCount ? props.reviewCount : 10} reviews.
+                    </div>
                 </div>
             </div>
         </div>
