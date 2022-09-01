@@ -242,8 +242,8 @@ const Card = (props) => {
                     <div className={classes.product__price}>
                         ${props.price ? props.price : 74}
                     </div>
-                    <div>
-                        Based on {props.reviewCount ? props.reviewCount : 10} reviews.
+                    <div className={classes.product__review}>
+                        Based on <span>{props.reviewCount ? props.reviewCount : 10}</span> reviews.
                     </div>
                 </div>
             </div>
