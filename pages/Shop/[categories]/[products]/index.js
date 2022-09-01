@@ -10,15 +10,12 @@ import TextDiv from '../../../../component/TextDiv'
 const Products = (props) => {
 
     const router = useRouter()
-    const categories = router.query.categories
-    const products = router.query.products
-    // const index = Math.abs(dummyData.items[categories]['products'].indexOf(products))
-    // console.log(dummyData.items[categories]['types'])
-    // console.log(categories)
-    // useEffect(() => {
-    //     // setData(dummyData[categories])
-    //     // console.log(data)
-    // }, [])
+    const category = router.query.categories
+    const product = props.product
+    const images = product.images
+
+    console.log(category)
+
     const text = {
         'title': 'Why This Company?',
         'textOne': {
@@ -35,9 +32,9 @@ const Products = (props) => {
     return (
         <div>
             <ProductPage
-            // images={data.images}
-            // category={categories}
-            // name={data.name}
+                images={images}
+                category={category}
+                name={product.name}
 
             />
             <Reviews />
