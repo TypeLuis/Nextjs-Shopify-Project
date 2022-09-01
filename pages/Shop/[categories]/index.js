@@ -115,7 +115,13 @@ const Category = () => {
 
                             return (
                                 <div className={classes.drip} key={i}>
-                                    <Card name={item.name} images={item.images} rating={item.rating} price={item.price} />
+                                    <Card
+                                        name={item.name}
+                                        images={item.images}
+                                        rating={item.rating}
+                                        price={item.price}
+                                        category={name}
+                                    />
                                 </div>
                             )
                         })}
