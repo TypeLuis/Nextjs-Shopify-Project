@@ -29,6 +29,8 @@ const Products = (props) => {
         },
 
     }
+
+    const text2 = {}
     return (
         <div>
             <ProductPage
