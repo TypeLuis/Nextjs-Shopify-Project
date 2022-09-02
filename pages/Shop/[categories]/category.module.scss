@@ -6,6 +6,8 @@ $maxGrid : 3;
     // AutoFills columns, max out at 3
     // use #{$variable} syntax in calc function to use variable
     grid-template-columns: repeat(auto-fill, minmax(Max(500px, calc(100% / #{$maxGrid})), 1fr));
+
+    gap: .5em;
 }
 
 @media screen and (max-width: 500px) {

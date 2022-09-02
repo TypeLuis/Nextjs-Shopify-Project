@@ -35,8 +35,8 @@ const Products = (props) => {
                 images={images}
                 category={category}
                 name={product.name}
-
             />
+
             <Reviews />
             <TextDiv title={text.title} textOne={text.textOne} textTwo={text.textTwo} />
             <Right />
@@ -154,9 +154,6 @@ export const getStaticPaths = async () => {
         )
     }).flat()
 
-    // const test = dummyData.categories.map((item, i) => {
-
-    // })
 
     console.log(categoryPaths)
 
