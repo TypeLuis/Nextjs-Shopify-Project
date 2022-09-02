@@ -15,7 +15,7 @@ const Card = (props) => {
     const router = useRouter()
 
     const handleClick = () => {
-        router.push(`${props.category ? props.category : 'console'}/${props.name ? props.name : 'console'}`)
+        router.push(`/Shop/${props.category ? props.category : 'console'}/${props.name ? props.name : 'PS5'}`)
     }
 
 
