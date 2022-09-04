@@ -36,30 +36,30 @@ function NavItem(props) {
 
 
     // determines if dropdown is open or closed
-    const handleOpenClick = (e) => { 
+    const handleOpenClick = (e) => {
         e.preventDefault()
-        
+
         // this classList references the current click
         // console.log('e', e.target.classList)
         console.log('i', icon.current?.classList)
-        
-        
+
+
         // using setTimeout to reference previous button
-        setTimeout(()=>{
+        setTimeout(() => {
 
             // The window on click is inside the handle click because we need to recall it every time the button is clicked
             window.onclick = function (e) {
                 // each class name has an event to toggle
-    
+
                 // if user clicks on element that doesn't contain 'nav-event' as it's first class name
                 if (e.target.classList[0] != 'nav-event') {
                     setContent(false)
-    
+
                     // this setTimeOut is here to let the animation of dropdown fade out
                     setTimeout(() => { setOpen(false) }, 400)
                 }
-    
-    
+
+
                 // if the icon reference has a class name of true which is determined by the open state and if the element clicked has a class named 'nav control'
                 else if (!open === true && icon.current?.classList.contains(classes[!open]) && e.target.classList.contains('nav-control')) {
                     console.log(!open)
@@ -80,7 +80,7 @@ function NavItem(props) {
 
         if (open === true && content === true) { }
         else {
-            setTimeout(()=>{
+            setTimeout(() => {
 
                 setOpen(true)
                 setContent(true)
@@ -91,7 +91,7 @@ function NavItem(props) {
     return (
         <li ref={icon} className={`nav-event nav-control ${props.menu} ${classes[open]} ${classes.nav_item}`}>
             {/* <a href="#" className={`nav-event nav-control ${classes.open} ${classes.icon_button}`} id='icon' onClick={(e) => { setOpen(!open) }}> */}
-            <a href="#" className={`nav-event nav-button nav-control ${props.menu} ${classes[open]} ${classes.icon_button}`} id='icon' onClick={(e)=>{handleOpenClick(e)}} >
+            <a href="#" className={`nav-event nav-button nav-control ${props.menu} ${classes[open]} ${classes.icon_button}`} id='icon' onClick={(e) => { handleOpenClick(e) }} >
                 {props.icon}
             </a>
 
@@ -125,10 +125,10 @@ function DropdownMenu(props) {
         // const height2 = el.offsetHeight;
         const height = ref.current?.offsetHeight + 30;
         // setTimeout(()=>{console.log(el.offsetHeight)}, 1000)
-        
+
         // console.log(ref)
         setMenuHeight(height);
-        
+
     }
 
     function DropdownItem(props) {
@@ -136,7 +136,7 @@ function DropdownMenu(props) {
 
             <>
                 {props.dropLink ?
-                
+
 
                     <Link href={props.dropLink}  >
                         <a className={`${classes.menu_item}`}>
@@ -169,7 +169,7 @@ function DropdownMenu(props) {
 
     return (
         // props.content is referring if the content is showing is true, making this className a boolean in which we can toggle the fade in and out animation in css
-        <div className={`nav-event ${classes[props.content]} ${classes.dropdown_small}`} id='dropDown' style={{"height" : menuHeight}}  ref={dropdownRef}>
+        <div className={`nav-event ${classes[props.content]} ${classes.dropdown_small}`} id='dropDown' style={{ "height": menuHeight }} ref={dropdownRef}>
 
 
             {/* Main */}
@@ -179,7 +179,7 @@ function DropdownMenu(props) {
                 in={activeMenu === 'main'}
                 timeout={500}
                 classNames={{
-                    "nav-event" : 'nav-event',
+                    "nav-event": 'nav-event',
                     enterActive: classes.menu_primary_Enter_Active,
                     enterDone: classes.menu_primary_Enter_Done,
                     exitActive: classes.menu_primary_Exit_Active,
@@ -187,11 +187,11 @@ function DropdownMenu(props) {
                 }}
                 nodeRef={nodeRef}
                 unmountOnExit
-                onEnter={(el)=>{calcHeight(el, nodeRef)}}>
+                onEnter={(el) => { calcHeight(el, nodeRef) }}>
                 {/* // give functions on enter */}
                 {/* >  */}
-                <div ref={nodeRef}  className={`nav-event ${classes.menu}`}>
-                {/* <div  className={`nav-event ${classes.menu}`}> */}
+                <div ref={nodeRef} className={`nav-event ${classes.menu}`}>
+                    {/* <div  className={`nav-event ${classes.menu}`}> */}
 
                     <DropdownItem leftIcon={"^"} dropLink='/'>Home</DropdownItem>
                     <DropdownItem
@@ -219,7 +219,7 @@ function DropdownMenu(props) {
                 in={activeMenu === 'main2'}
                 timeout={500}
                 classNames={{
-                    "nav-event" : 'nav-event',
+                    "nav-event": 'nav-event',
                     enterActive: classes.menu_primary_Enter_Active,
                     enterDone: classes.menu_primary_Enter_Done,
                     exitActive: classes.menu_primary_Exit_Active,
@@ -227,11 +227,11 @@ function DropdownMenu(props) {
                 }}
                 nodeRef={nodeRef3}
                 unmountOnExit
-                onEnter={(el)=>{calcHeight(el, nodeRef)}}>
+                onEnter={(el) => { calcHeight(el, nodeRef) }}>
                 {/* // give functions on enter */}
                 {/* >  */}
-                <div ref={nodeRef3}  className={`nav-event ${classes.menu}`}>
-                {/* <div  className={`nav-event ${classes.menu}`}> */}
+                <div ref={nodeRef3} className={`nav-event ${classes.menu}`}>
+                    {/* <div  className={`nav-event ${classes.menu}`}> */}
 
                     <DropdownItem leftIcon={"^"} dropLink='/'>Home</DropdownItem>
                     <DropdownItem
@@ -264,7 +264,7 @@ function DropdownMenu(props) {
                 timeout={500}
                 // gives this the secondary menu because it's transitioning from primary
                 classNames={{
-                    "nav-event" : 'nav-event',
+                    "nav-event": 'nav-event',
                     enterActive: classes.menu_secondary_Enter_Active,
                     enterDone: classes.menu_secondary_Enter_Done,
                     exitActive: classes.menu_secondary_Exit_Active,
@@ -273,29 +273,26 @@ function DropdownMenu(props) {
                 // classNames={`nav-event ${classes.menu_secondary}`}
                 unmountOnExit
                 nodeRef={nodeRef2}
-                onEnter={(el)=>{calcHeight(el, nodeRef2)}}>
+                onEnter={(el) => { calcHeight(el, nodeRef2) }}>
                 {/* > */}
-                <div  ref={nodeRef2} className={`nav-event ${classes.menu}`}>
-                {/* <div className={`nav-event ${classes.menu}`}> */}
+                <div ref={nodeRef2} className={`nav-event ${classes.menu}`}>
+                    {/* <div className={`nav-event ${classes.menu}`}> */}
 
-                <div className={classes.second_heading}>
+                    <div className={classes.second_heading}>
 
-                    <DropdownItem goToMenu="main" leftIcon={"<"}>
-                        <h2 className={`nav-event`}>Shop</h2>
-                    </DropdownItem>
-                </div>
+                        <DropdownItem goToMenu="main" leftIcon={"<"}>
+                            <h2 className={`nav-event`}>Shop</h2>
+                        </DropdownItem>
+                    </div>
 
-                    <DropdownItem dropLink='/' leftIcon={"^"}>TV</DropdownItem>
+                    <DropdownItem dropLink='/Shop/bag' leftIcon={"^"}>Bag</DropdownItem>
 
-                    <DropdownItem dropLink='/' leftIcon={"^"}>airing</DropdownItem>
+                    <DropdownItem dropLink='/Shop/vaccum' leftIcon={"^"}>Vaccum</DropdownItem>
 
-                    <DropdownItem dropLink='/' leftIcon={"^"}>upcoming</DropdownItem>
+                    <DropdownItem dropLink='/Shop/console' leftIcon={"^"}>Console</DropdownItem>
 
-                    <DropdownItem dropLink='/' leftIcon={"^"}>Movie</DropdownItem>
+                    <DropdownItem dropLink='/Shop/games' leftIcon={"^"}>Games</DropdownItem>
 
-                    <DropdownItem dropLink='/' leftIcon={"^"}>special</DropdownItem>
-
-                    <DropdownItem dropLink='/' leftIcon={"^"}>ova</DropdownItem>
                 </div>
             </CSSTransition>
 
