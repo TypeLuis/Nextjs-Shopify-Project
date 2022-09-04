@@ -63,7 +63,7 @@ const Header = () => {
                     <span onClick={() => { navigator('Blog') }}>Blog</span>
                 </li>
                 <li>
-                    <span onClick={() => { navigator('Subscribe') }}>Subscribe</span>
+                    <span onClick={() => { navigator('Subscribe') }}>Sign Up</span>
                 </li>
             </ul>
         </nav>
