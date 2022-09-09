@@ -13,7 +13,7 @@ const Admin = () => {
             {name === process.env.SITE &&
 
                 <div>
-                    hello
+                    hello adding tests
                 </div>
 
             }
