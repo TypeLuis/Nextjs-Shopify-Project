@@ -230,9 +230,9 @@ const Card = (props) => {
                 }
             </div>
 
-            <div className={classes.product__wave}>
+            {/* <div className={classes.product__wave}>
 
-            </div>
+            </div> */}
 
             <div className={classes.product__info}>
 
