@@ -32,7 +32,7 @@ const Products = (props) => {
 
     const text2 = {}
     return (
-        <div>
+        <>
             <ProductPage
                 images={images}
                 category={category}
@@ -44,7 +44,7 @@ const Products = (props) => {
             <Right />
             <Left />
             <Right />
-        </div>
+        </>
     )
 }
 

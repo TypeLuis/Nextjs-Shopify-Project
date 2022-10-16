@@ -25,9 +25,8 @@
     left 500ms ease-in-out;
   display: flex;
   flex-direction: column;
-  grid-template-rows: min-content;
-  gap: 0.5rem;
-  // padding: 0.5rem;
+  // grid-template-rows: min-content;
+
   text-align: center;
   position: relative;
   // align-items: baseline;
@@ -40,6 +39,9 @@
 }
 
 .card.single {
+
+  gap: 0.5rem;
+  padding: 0.5rem;
 
   .product__info {
     display: flex;
@@ -164,10 +166,6 @@
       &:hover {}
 
     }
-
-
-
-
 
     img {
       position: absolute;
