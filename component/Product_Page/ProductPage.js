@@ -238,7 +238,9 @@ const ImageBox = (props) => {
     }
 
     const closeModal = (e) => {
-        console.log(e.parentNode)
+        console.log(e.target.parentNode)
+        const modalNode = e.target.parentNode
+        modalNode.style.display = 'none'
     }
 
     // console.log(images.length)
@@ -247,7 +249,7 @@ const ImageBox = (props) => {
             <img onClick={(e) => { imgClickModal(e) }} className={classes.product_hero} src={mainImg} alt="image product" />
 
             <div id="myModal" className={classes.modal}>
-                <span className={classes.close}>&times;</span>
+                <span onClick={(e) => { closeModal(e) }} className={classes.close}>&times;</span>
                 <img className={classes['modal-content']} src={mainImg} id="img01" />
                 <div id="caption"></div>
             </div>
