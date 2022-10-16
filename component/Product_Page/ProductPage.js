@@ -231,10 +231,26 @@ const ImageBox = (props) => {
         // console.log(sliceNum)
     }
 
+    const imgClickModal = (e) => {
+        console.log(e.target.parentNode.childNodes[1])
+        const modalNode = e.target.parentNode.childNodes[1]
+        modalNode.style.display = 'block'
+    }
+
+    const closeModal = (e) => {
+        console.log(e.parentNode)
+    }
+
     // console.log(images.length)
     return (
         <section className={classes.imageBox}>
-            <img className={classes.product_hero} src={mainImg} alt="image product" />
+            <img onClick={(e) => { imgClickModal(e) }} className={classes.product_hero} src={mainImg} alt="image product" />
+
+            <div id="myModal" className={classes.modal}>
+                <span className={classes.close}>&times;</span>
+                <img className={classes['modal-content']} src={mainImg} id="img01" />
+                <div id="caption"></div>
+            </div>
 
             <div onClick={prevImg} className={`${classes.previous} ${classes.arrow}`}>
                 <img src={previous.src} alt="icon previous" />
