@@ -228,7 +228,6 @@ const ImageBox = (props) => {
         setImgIndex(CopySliceNum['num1'])
         setMainImg(props.images[CopySliceNum['num1']])
         changeActive(CopySliceNum['num1'])
-        // console.log(sliceNum)
     }
 
     const imgClickModal = (e) => {
